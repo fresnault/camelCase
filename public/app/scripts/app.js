@@ -22,6 +22,13 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+
+      .when('/movies', {
+        templateUrl: 'app/views/movies.html',
+        controller: 'MoviesCtrl',
+        controllerAs: 'movies'
+      })
+
       .when('/about', {
         templateUrl: 'app/views/about.html',
         controller: 'AboutCtrl',
