@@ -13,7 +13,6 @@
 		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-		<link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.css" />
 
 		<!-- CSS -->
 		<!-- HTML5 IE Enabling Script -->
@@ -46,6 +45,8 @@
 			if (window.DeviceOrientationEvent) {
 			  // Listen for the deviceorientation event and handle the raw data
 			  window.addEventListener('deviceorientation', function(eventData) {
+			  					alert('Device orientation ' + eventData.gamma);
+
 			    // gamma is the left-to-right tilt in degrees, where right is positive
 			    var tiltLR = eventData.gamma;
 
@@ -54,7 +55,7 @@
 
 			    // alpha is the compass direction the device is facing in degrees
 			    var dir = eventData.alpha;
-			    $('positionPhone').text('tiltLR : ' + tiltLR + '; tiltFB :' + tiltFB + '; dir :' + dir);
+			    $('#positionPhone').text('tiltLR : ' + tiltLR + '; tiltFB :' + tiltFB + '; dir :' + dir);
 			    // call our orientation event handler
 			    deviceOrientationHandler(tiltLR, tiltFB, dir);
 			  }, false);
