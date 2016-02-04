@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Remote control</title>
+		<title>CamelCase Mobile</title>
 		<meta charset="utf-8">
 		<meta name="description" content="place your description here" />
 		<meta name="author" content="Your name">
@@ -13,6 +13,8 @@
 		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		<link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.css" />
+
 		<!-- CSS -->
 		<!-- HTML5 IE Enabling Script -->
 		<!--[if lt IE 9]><script src="libs/html5shiv.min.js"></script>
@@ -21,12 +23,17 @@
 	<body onload="test()">
 		<div class="container" style="text-align:center;margin-top:5em;perspective: 300;">
 			<img src="app/images/arrow.png" id="imgLogo" class="logo">
+			<p id="positionPhone"><p>
 		</div>
 		<!-- JavaScript at the bottom for fast page loading -->
+		<script src="/socket.io/socket.io.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="libs/jquery-1.10.1.min.js"><\/script>')</script>
 		<script>
-			
+			var socket = io();
+			socket.on('connection', function(socket){
+			  console.log('YOOO');
+			});
 			function test(){
 				//window.location.href = "sms:+375292771265?body=Hello from Appery.io!";
 
@@ -44,7 +51,7 @@
 
 			    // alpha is the compass direction the device is facing in degrees
 			    var dir = eventData.alpha
-
+			    $('positionPhone').text('tiltLR : ' + tiltLR + '; tiltFB :' + tiltFB + '; dir :' + dir)
 			    // call our orientation event handler
 			    deviceOrientationHandler(tiltLR, tiltFB, dir);
 			  }, false);
