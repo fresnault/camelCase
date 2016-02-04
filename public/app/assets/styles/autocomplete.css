@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Enriqueta);
 .search-wrapper {
   width:100%;
-  margin: 50px;
+  margin: 263px 50px 50px 50px;
   padding: 0;
   background-size: cover;
 }
@@ -15,6 +15,7 @@
 
 .search-box {
   display: none;
+  top: 150px;
   float: left;
   width: 100%;
   box-sizing: content-box;
@@ -46,16 +47,7 @@
 
 .search-button {
   position: absolute;
-  border: 0;
-  background: transparent;
-  right: 12px;
-  background: url(https://dl.dropboxusercontent.com/u/3420025/Code/Misc/CodePen/rodeo-003/search/magnifying-glass.svg) no-repeat top left;
-  width: 17px;
-  height: 17px;
-  background-size: 17px;
-  margin-top: 14px;
-  margin-right: 8.5px;
-  opacity: 0.65;
+  opacity: 0;
 }
 .search-button:before {
   display: block;
@@ -209,4 +201,79 @@
   -o-transform-origin: 0 100%;
   transform-origin: 0 100%;
   box-sizing: content-box;
+}
+
+
+
+.full {
+  width: 100%;
+  position: absolute;
+  margin: 0px auto;
+}
+
+#elements {
+  width: 100%;
+  margin: 80px auto;
+}
+
+#elements li {
+  width: 100px;
+  height: 142px;
+  display: block;
+  margin: 0.3%;
+  position: relative;
+  float: left;
+}
+
+#elements li .content {
+  width: 100px;
+  transition: opacity 0.6s;
+  position: absolute;
+  opacity: 0.2;
+}
+
+#elements li .content img {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  display: block;
+}
+
+#elements li .content h1 {
+  width: 120%;
+  height: 17px;
+  line-height: 17px;
+  padding: 0 5px;
+  background: #4A4A4A;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 9px;
+  margin: -25% 0px 0px -17%;
+  color: #FFFFFF;
+  text-shadow: #000000 1px 1px 0px;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 1);
+  border: rgba(255, 255, 255, 0.23) 1px solid;
+  text-transform: capitalize;
+  opacity: 0;
+  display: block;
+}
+
+#elements li .content:hover {
+  opacity: 1;
+  z-index: 5;
+  margin-left: -24%;
+  margin-top: -24%;
+  zoom: 1.5;
+}
+
+#elements li .content:hover img {
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 1);
+  border-radius: 3px;
+}
+
+#elements li .content:hover h1 {
+  opacity: 1;
 }

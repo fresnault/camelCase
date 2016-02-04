@@ -137,7 +137,7 @@
           </div>
           <div class="film">
             <p class="code-title"></p>
-            <p><span>Date de naissance:</span>{{actor.birthday}}</p>
+            <p><span>Date de naissance:</span>{{actor.birthday  | date : 'dd MMMM yyyy'}}</p>
             <p><span>Lieu de naissance:</span>{{actor.place_of_birth}}</p>
             <p><span>Popularité:</span>{{actor.popularity}}</p>
             <p><span>Biographie:</span>{{actor.biography | limitTo:100}}</p>

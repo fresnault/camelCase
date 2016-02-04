@@ -86,7 +86,7 @@ body {
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 2rem; }
@@ -247,6 +247,12 @@ margin: 0;
 display: inline-block;
 /* font-weight: bold; */
 width: 125px;
+}
+
+.desc-active > p > span.label {
+  color: white !important;
+  margin-right: 5px;
+  width: auto;
 }
 
 p.code-title {

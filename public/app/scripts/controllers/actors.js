@@ -30,7 +30,7 @@ angular.module('camelCaseApp')
 
 		$scope.selectedActor = function(selected) {
 			console.log(selected);
-			$location.url('vueFilm/'+selected.id);
+			$location.url('movie/'+selected.id);
 		}
 
 		$scope.getMovies = function() {

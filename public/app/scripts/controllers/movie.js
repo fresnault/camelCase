@@ -23,7 +23,7 @@ angular.module('camelCaseApp')
 	    };
 	})
 
-	.controller('vueFilmCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
+	.controller('movieCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
 
 		var idMovie = $routeParams.id;
 		$scope.movie = {};

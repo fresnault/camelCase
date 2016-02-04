@@ -20,19 +20,19 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'app/views/movies.html',
+        templateUrl: 'app/views/search.html',
         controller: 'MoviesCtrl',
-        controllerAs: 'movies'
+        controllerAs: 'search'
       })
       .when('/actor/:id', {
         templateUrl: 'app/views/actors.html',
         controller: 'actorsCtrl',
         controllerAs: 'actorsCtrl'
       })
-      .when('/vueFilm/:id', {
-        templateUrl: 'app/views/vueFilm.html',
-        controller: 'vueFilmCtrl',
-        controllerAs: 'vueFilm'
+      .when('/movie/:id', {
+        templateUrl: 'app/views/movie.html',
+        controller: 'movieCtrl',
+        controllerAs: 'movie'
       })
 
       .otherwise({

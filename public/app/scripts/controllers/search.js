@@ -28,10 +28,20 @@ angular.module('camelCaseApp')
 
 	$scope.resultat = {};
 
-	$http.get('https://api.themoviedb.org/3/configuration?api_key=' + API_KEY).then(function(res) {
+	/*$http.get('https://api.themoviedb.org/3/configuration?api_key=' + API_KEY).then(function(res) {
 		$scope.conf = res.data;
-		console.log($scope.conf);
+	});*/
+
+	$http.get('http://api.themoviedb.org/3/movie/popular?api_key=' + API_KEY).then(function(res) {
+		angular.forEach(res.data.results, function(movie, key) {
+			movie.poster_path = 'https://image.tmdb.org/t/p/w92' + movie.poster_path;
+		})
+		console.log(res.data);
+		$scope.popular = res.data.results.slice(0, 12);
+
 	});
+
+
 
 	$scope.changeMoviesResult = function(data) {
 		angular.forEach(data.results, function(movie, value) {
@@ -65,8 +75,11 @@ angular.module('camelCaseApp')
 	}
 
 	$scope.selectedMovie = function(selected) {
-		console.log(selected.originalObject);
-		$location.url('vueFilm/'+selected.originalObject.id);
+		$scope.moveToMovie(selected.originalObject.id);
+	}
+
+	$scope.moveToMovie = function(id) {
+		$location.url('movie/'+id);
 	}
 
 	$scope.selectedActor = function(selected) {
