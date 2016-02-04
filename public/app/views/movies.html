@@ -1,14 +1,15 @@
 <script src='app/assets/js/effet.js'></script>
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
 <section class="intro" >
   <div class="intro-block" style="align-items: baseline;">
     <div class="search-wrapper cf">
 
 
       <form>
-        <div class="search-box">
+        <div id="movies" class="search-box active">
           <angucomplete-alt id="movies"
-          placeholder="What are you searching for?"
+          placeholder="Quelle est le film que vous recherchez ?"
           pause="100"
           auto-match=true
           remote-url="http://api.themoviedb.org/3/search/movie?api_key=16f6aa27277494afd13f5497d6ceba9e&query="
@@ -20,8 +21,29 @@
           match-class="highlight"
           selected-object="selectedMovie"
           objectSelectedCallback="selectedMovie"
-          remote-url-response-formatter="addPathToUrl" />
+          remote-url-response-formatter="changeMoviesResult" />
           <button class="search-button" type="submit"></button>
+        </div>
+        <div id="actors" class="search-box">
+          <angucomplete-alt id="movies"
+          placeholder="Quel est l'acteur que vous recherchez ?"
+          pause="100"
+          auto-match=true
+          remote-url="http://api.themoviedb.org/3/search/person?api_key=16f6aa27277494afd13f5497d6ceba9e&query="
+          remote-url-data-field="results"
+          title-field="name"
+          image-field="profile_path"
+          input-class="search-keyword"
+          match-class="highlight"
+          selected-object="selectedActor"
+          objectSelectedCallback="selectedActor"
+          remote-url-response-formatter="changeActorsResult" />
+          <button class="search-button" type="submit"></button>
+        </div>
+        <div id="switch">
+          <div class="diamond"></div>
+          <div class="choice on">FILMS</div>
+          <div class="choice">ACTEURS</div>
         </div>
       </form>
     </div>
