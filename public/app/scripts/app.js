@@ -16,6 +16,7 @@ angular
     'ngTouch',
     'angucomplete-alt'
   ])
+  .constant('API_KEY', '16f6aa27277494afd13f5497d6ceba9e')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

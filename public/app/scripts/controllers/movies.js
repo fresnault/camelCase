@@ -8,19 +8,15 @@
  * Controller of the camelCaseApp
  */
 angular.module('camelCaseApp')
-	.controller('MoviesCtrl', function($scope, $http, $sce, $location) {
+	.controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY) {
 
 		$scope.conf = {};
 
-
-		var api_key = '16f6aa27277494afd13f5497d6ceba9e';
-
 		$scope.resultat = {};
 
-		$http.get('https://api.themoviedb.org/3/configuration?api_key=' + api_key).then(function(res) {
+		$http.get('https://api.themoviedb.org/3/configuration?api_key=' + API_KEY).then(function(res) {
 			$scope.conf = res.data;
 			console.log($scope.conf);
-
 		});
 
 		$scope.addPathToUrl = function(data) {
