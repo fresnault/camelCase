@@ -23,7 +23,10 @@
 	<body onload="test()">
 		<div class="container" style="text-align:center;margin-top:5em;perspective: 300;">
 			<img src="app/images/arrow.png" id="imgLogo" class="logo">
-			<p id="positionPhone"><p>
+			
+		</div>
+		<div>
+		<center><p id="positionPhone">Coucou position phone</p></center>
 		</div>
 		<!-- JavaScript at the bottom for fast page loading -->
 		<script src="/socket.io/socket.io.js"></script>
@@ -50,8 +53,8 @@
 			    var tiltFB = eventData.beta;
 
 			    // alpha is the compass direction the device is facing in degrees
-			    var dir = eventData.alpha
-			    $('positionPhone').text('tiltLR : ' + tiltLR + '; tiltFB :' + tiltFB + '; dir :' + dir)
+			    var dir = eventData.alpha;
+			    $('positionPhone').text('tiltLR : ' + tiltLR + '; tiltFB :' + tiltFB + '; dir :' + dir);
 			    // call our orientation event handler
 			    deviceOrientationHandler(tiltLR, tiltFB, dir);
 			  }, false);
