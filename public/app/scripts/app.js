@@ -24,10 +24,10 @@ angular
         controller: 'MoviesCtrl',
         controllerAs: 'movies'
       })
-      .when('/vuePolygon', {
-        templateUrl: 'app/views/vuePolygon.html',
-        controller: '',
-        controllerAs: ''
+      .when('/actor/:id', {
+        templateUrl: 'app/views/actors.html',
+        controller: 'actorsCtrl',
+        controllerAs: 'actorsCtrl'
       })
       .when('/vueFilm/:id', {
         templateUrl: 'app/views/vueFilm.html',

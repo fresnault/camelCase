@@ -1,0 +1,163 @@
+
+    <script src='app/assets/js/effet.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<section class="intro" >
+  <div class="intro-block">
+    <div class="centerfold-wrap">
+      <div class="hex-master-wrap">
+        <!--<div class="hover-notify">Hover Me!</div>-->
+        <div class="grid-1">
+          <div class="hex-wrap" id="hex11" data-title="{{actor.acteurs[0].character}}" data-content="actor-0" data-color="#0083de">
+              <div class="hex-init"></div>
+              <div class="hex-borders">
+                <div class="border-1 filmbordure"></div>
+                <div class="border-2 filmbordure"></div>
+                <div class="border-3 filmbordure"></div>
+              </div>
+              <div class="label"><img class="arrondie imgactor" src="https://image.tmdb.org/t/p/w92/{{actor.acteurs[0].profile_path}}"/></div>
+            <div class="hexagon">
+              <div class="hex-inner-1">
+                <div class="hex-inner-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hex-wrap" id="hex12" data-title="{{actor.acteurs[1].character}}" data-content="actor-1" data-color="#0083de">
+              <div class="hex-init"></div>
+              <div class="hex-borders">
+                <div class="border-1 filmbordure"></div>
+                <div class="border-2 filmbordure"></div>
+                <div class="border-3 filmbordure"></div>
+              </div>
+              <div class="label"><img class="arrondie imgactor" src="https://image.tmdb.org/t/p/w92/{{actor.acteurs[1].profile_path}}"/></div>
+            <div class="hexagon">
+              <div class="hex-inner-1">
+                <div class="hex-inner-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="hex-wrap" id="hex21" data-title="{{actor.acteurs[2].character}}" data-content="actor-2" data-color="#0083de">
+              <div class="hex-init"></div>
+              <div class="hex-borders">
+                <div class="border-1 filmbordure"></div>
+                <div class="border-2 filmbordure"></div>
+                <div class="border-3 filmbordure"></div>
+              </div>
+              <div class="label"><img class="arrondie imgactor" src="https://image.tmdb.org/t/p/w92/{{actor.acteurs[2].profile_path}}"/></div>
+            <div class="hexagon">
+              <div class="hex-inner-1">
+                <div class="hex-inner-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hex-wrap" id="hex22" data-title="{{actor.name}}" data-content="film" data-color="#E34C26">
+              <div class="hex-init"></div>
+              <div class="hex-borders">
+                <div class="border-1 actorbordure"></div>
+                <div class="border-2 actorbordure"></div>
+                <div class="border-3 actorbordure"></div>
+              </div>
+              <div class="label"><img class="arrondie"  src="https://image.tmdb.org/t/p/w92/{{actor.poster_path}}"/></div>
+            <div class="hexagon">
+              <div class="hex-inner-1">
+                <div class="hex-inner-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hex-wrap" id="hex23" data-title="{{actor.acteurs[3].character}}" data-content="actor-3" data-color="#0083de">
+              <div class="hex-init"></div>
+              <div class="hex-borders">
+                <div class="border-1 filmbordure"></div>
+                <div class="border-2 filmbordure"></div>
+                <div class="border-3 filmbordure"></div>
+              </div>
+              <div class="label"><img class="arrondie imgactor" src="https://image.tmdb.org/t/p/w92/{{actor.acteurs[3].profile_path}}"/></div>
+            <div class="hexagon">
+              <div class="hex-inner-1">
+                <div class="hex-inner-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="hex-wrap" id="hex31" data-title="{{actor.acteurs[4].character}}" data-content="actor-4" data-color="#0083de">
+              <div class="hex-init"></div>
+              <div class="hex-borders">
+                <div class="border-1 filmbordure"></div>
+                <div class="border-2 filmbordure"></div>
+                <div class="border-3 filmbordure"></div>
+              </div>
+              <div class="label"><img class="arrondie imgactor" src="https://image.tmdb.org/t/p/w92/{{actor.acteurs[4].profile_path}}"/></div>
+            <div class="hexagon">
+              <div class="hex-inner-1">
+                <div class="hex-inner-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hex-wrap" id="hex32" data-title="{{actor.acteurs[5].character}}" data-content="actor-5" data-color="#0083de">
+              <div class="hex-init"></div>
+              <div class="hex-borders">
+                <div class="border-1 filmbordure"></div>
+                <div class="border-2 filmbordure"></div>
+                <div class="border-3 filmbordure"></div>
+              </div>
+              <div class="label"><img class="arrondie imgactor" src="https://image.tmdb.org/t/p/w92/{{actor.acteurs[5].profile_path}}" /></div>
+            <div class="hexagon">
+              <div class="hex-inner-1">
+                <div class="hex-inner-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="code-display">
+        <div class="code-description">
+          <div class="actor-0">
+            <p class="code-title"></p>
+            <p><span>Titre original:</span>{{actor.acteurs[0].name}}</p>
+            <p><span>Biographie:</span>{{actor.acteurs[0].info.biography| limitTo:100}}...</p>
+            <div class="code-icon"></div>
+          </div>
+          <div class="actor-1">
+            <p class="code-title"></p>
+            <p><span>Biographie:</span>{{actor.acteurs[1].biographie| limitTo:100}}...</p>
+            <div class="code-icon"></div>
+          </div>
+          <div class="actor-2">
+            <p class="code-title"></p>
+            <p><span>Biographie:</span>{{actor.acteurs[2].biographie| limitTo:100}}...</p>
+            <div class="code-icon"></div>
+          </div>
+          <div class="film">
+            <p class="code-title"></p>
+            <p><span>Date de naissance:</span>{{actor.birthday}}</p>
+            <p><span>Lieu de naissance:</span>{{actor.place_of_birth}}</p>
+            <p><span>Popularité:</span>{{actor.popularity}}</p>
+            <p><span>Biographie:</span>{{actor.biography | limitTo:100}}</p>
+            <div class="code-icon"></div>
+          </div>
+
+          <div class="actor-3">
+            <p class="code-title"></p>
+            <p><span>Biographie:</span>{{actor.acteurs[3].biographie| limitTo:100}}...</p>
+            <div class="code-icon"></div>
+          </div>
+          <div class="actor-4">
+            <p class="code-title"></p>
+            <p><span>Biographie:</span>{{actor.acteurs[4].biographie| limitTo:100}}...</p>
+            <div class="code-icon"></div>
+          </div>
+          <div class="actor-5">
+            <p class="code-title"></p>
+            <p><span>Biographie:</span>{{actor.acteurs[5].biographie| limitTo:100}}...</p>
+            <div class="code-icon"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="hoverblock"></div>
+    </div> <!-- End Centerfold-Wrap -->
+  </div>
+
+</section>

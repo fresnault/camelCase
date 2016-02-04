@@ -8,7 +8,7 @@
  * Controller of the camelCaseApp
  */
 angular.module('camelCaseApp')
-	.controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY) {
+	.controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY, $filter) {
 
 		$scope.conf = {};
 
@@ -21,10 +21,22 @@ angular.module('camelCaseApp')
 
 		$scope.addPathToUrl = function(data) {
 			angular.forEach(data.results, function(movie, value) {
-				movie.poster_path = 'https://image.tmdb.org/t/p/w92/' + movie.poster_path;
-				movie.vote_average = '(' + movie.vote_average + '/10)';
+				if(movie.poster_path != null) {
+					movie.poster_path = 'https://image.tmdb.org/t/p/w92/' + movie.poster_path;
+				} else {
+					movie.poster_path = '';
+				}
+				movie.vote = '(' + movie.vote_average + '/10)';
 				movie.year = movie.release_date.substring(0, 4);
+
+				if(movie.vote_average < 1) {
+					var index = data.results.indexOf(movie);
+					data.results.splice(index, 1);
+				}
 			})
+
+			data.results = $filter('orderBy')(data.results, 'year');
+
 			return data;
 		}
 
