@@ -7,7 +7,7 @@
       <div class="hex-master-wrap">
         <!--<div class="hover-notify">Hover Me!</div>-->
         <div class="grid-1">
-          <div class="hex-wrap" id="hex11" data-title="{{actor.movies[0].title}}" data-content="actor-0" data-color="#0083de">
+          <div class="hex-wrap" id="hex11" data-title="{{actor.movies[0].title}}" data-content="actor-0" data-color="#0083de" ng-click="selectedMovie(actor.movies[0])" >
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 filmbordure"></div>
@@ -21,7 +21,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex12" data-title="{{actor.movies[1].title}}" data-content="actor-1" data-color="#0083de">
+          <div class="hex-wrap" id="hex12" data-title="{{actor.movies[1].title}}" data-content="actor-1" data-color="#0083de" ng-click="selectedMovie(actor.movies[1])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 filmbordure"></div>
@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="grid-2">
-          <div class="hex-wrap" id="hex21" data-title="{{actor.movies[2].title}}" data-content="actor-2" data-color="#0083de">
+          <div class="hex-wrap" id="hex21" data-title="{{actor.movies[2].title}}" data-content="actor-2" data-color="#0083de" ng-click="selectedMovie(actor.movies[2])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 filmbordure"></div>
@@ -65,7 +65,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex23" data-title="{{actor.movies[3].title}}" data-content="actor-3" data-color="#0083de">
+          <div class="hex-wrap" id="hex23" data-title="{{actor.movies[3].title}}" data-content="actor-3" data-color="#0083de" ng-click="selectedMovie(actor.movies[3])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 filmbordure"></div>
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="grid-3">
-          <div class="hex-wrap" id="hex31" data-title="{{actor.movies[4].title}}" data-content="actor-4" data-color="#0083de">
+          <div class="hex-wrap" id="hex31" data-title="{{actor.movies[4].title}}" data-content="actor-4" data-color="#0083de" ng-click="selectedMovie(actor.movies[4])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 filmbordure"></div>
@@ -95,7 +95,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex32" data-title="{{actor.movies[5].title}}" data-content="actor-5" data-color="#0083de">
+          <div class="hex-wrap" id="hex32" data-title="{{actor.movies[5].title}}" data-content="actor-5" data-color="#0083de" ng-click="selectedMovie(actor.movies[5])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 filmbordure"></div>
@@ -115,25 +115,35 @@
         <div class="code-description">
           <div class="actor-0">
             <p class="code-title"></p>
-            <p ng-if="actor.movies[0].adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
-            <p><span>Sortie le:</span>{{actor.movies[0].release_date}}</p>
-            <p ng-if="actor.movies[0].genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in actor.movies[0].genres" >{{genre.name}}</div></p>
-            <p><span>Accroche:</span>{{actor.movies[0].tagline}}</p>
-            <p ng-if="actor.movies[0].original_title != actor.movies[0].title "> <span>Titre original:</span>{{actor.movies[0].original_title }}</p>
+            <p ng-if="actor.movies[0].info.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{actor.movies[0].info.release_date}}</p>
+            <p ng-if="actor.movies[0].info.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in actor.movies[0].info.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{actor.movies[0].info.tagline}}</p>
+            <p ng-if="actor.movies[0].info.info.original_title != actor.movies[0].info.info.title "> <span>Titre original:</span>{{actor.movies[0].info.original_title }}</p>
             <div class="code-icon"></div>
-
-
 
           </div>
           <div class="actor-1">
+
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{actor.movies[1].overview| limitTo:100}}...</p>
+            <p ng-if="actor.movies[1].info.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{actor.movies[1].info.release_date}}</p>
+            <p ng-if="actor.movies[1].info.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in actor.movies[1].info.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{actor.movies[1].info.tagline}}</p>
+            <p ng-if="actor.movies[1].info.info.original_title != actor.movies[1].info.info.title "> <span>Titre original:</span>{{actor.movies[1].info.original_title }}</p>
             <div class="code-icon"></div>
+
           </div>
           <div class="actor-2">
+
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{actor.movies[2].overview| limitTo:100}}...</p>
+            <p ng-if="actor.movies[2].info.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{actor.movies[2].info.release_date}}</p>
+            <p ng-if="actor.movies[2].info.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in actor.movies[2].info.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{actor.movies[2].info.tagline}}</p>
+            <p ng-if="actor.movies[2].info.info.original_title != actor.movies[2].info.info.title "> <span>Titre original:</span>{{actor.movies[0].info.original_title }}</p>
             <div class="code-icon"></div>
+
           </div>
           <div class="film">
             <p class="code-title"></p>
@@ -145,19 +155,37 @@
           </div>
 
           <div class="actor-3">
+
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{actor.movies[3].overview| limitTo:100}}...</p>
+            <p ng-if="actor.movies[3].info.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{actor.movies[3].info.release_date}}</p>
+            <p ng-if="actor.movies[3].info.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in actor.movies[3].info.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{actor.movies[3].info.tagline}}</p>
+            <p ng-if="actor.movies[3].info.info.original_title != actor.movies[3].info.info.title "> <span>Titre original:</span>{{actor.movies[3].info.original_title }}</p>
             <div class="code-icon"></div>
+
           </div>
           <div class="actor-4">
+
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{actor.movies[4].overview| limitTo:100}}...</p>
+            <p ng-if="actor.movies[4].info.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{actor.movies[4].info.release_date}}</p>
+            <p ng-if="actor.movies[4].info.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in actor.movies[4].info.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{actor.movies[4].info.tagline}}</p>
+            <p ng-if="actor.movies[4].info.info.original_title != actor.movies[4].info.info.title "> <span>Titre original:</span>{{actor.movies[4].info.original_title }}</p>
             <div class="code-icon"></div>
+
           </div>
           <div class="actor-5">
+
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{actor.movies[5].overview| limitTo:100}}...</p>
+            <p ng-if="actor.movies[5].info.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{actor.movies[5].info.release_date}}</p>
+            <p ng-if="actor.movies[5].info.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in actor.movies[5].info.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{actor.movies[5].info.tagline}}</p>
+            <p ng-if="actor.movies[5].info.info.original_title != actor.movies[5].info.info.title "> <span>Titre original:</span>{{actor.movies[5].info.original_title }}</p>
             <div class="code-icon"></div>
+
           </div>
         </div>
 

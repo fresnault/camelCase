@@ -8,7 +8,7 @@
  * Controller of the camelCaseApp
  */
 angular.module('camelCaseApp')
-	.controller('actorsCtrl', function($http, $scope, ThingService, API_KEY, $routeParams) {
+	.controller('actorsCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
 
 
 		var idPerson = $routeParams.id;
@@ -28,10 +28,13 @@ angular.module('camelCaseApp')
 		})
 
 
-		$scope.selectedActor = function(selected) {
+		$scope.selectedMovie = function(selected) {
 			console.log(selected);
-			$location.url('movie/'+selected.id);
+			if(selected  && selected.id)
+				$location.url('movie/'+selected.id);
 		}
+
+
 
 		$scope.getMovies = function() {
 			$scope.actor.movies.forEach(function(key, value) {

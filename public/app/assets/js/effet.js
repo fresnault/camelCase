@@ -8,9 +8,6 @@
 		dernierHexLigne = numLigne;
 		dernierHexCol = numCol;
 		var hexagone = $('#hex' + numLigne + numCol+' .hex-init');
-
-		console.log(hexagone.html());
-
 		var title_color = hexagone.parent().attr("data-color");
 		var title_name = hexagone.parent().attr("data-title");
 		var desc_name = hexagone.parent().attr("data-content");
