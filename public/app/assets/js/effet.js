@@ -45,9 +45,15 @@
 		}
 	}
 
+	animationEnabled = false;
+
+
+
 	$(document).ready(function() {
 
-
+		setTimeout(function(){
+			animationEnabled = true;
+		},2000);
 		/*Appeler la fonction afficherEffet() 
 		 Le faire avec après un laps de temps supérieur 		
 		 $(".hoverblock").velocity("fadeOut", { delay: 500, duration: 0 });
@@ -79,6 +85,8 @@
 		}
 
 		$(".hex-init").mouseenter(function() {
+
+			if(! animationEnabled) return;
 
 			myStopFunction();
 
@@ -113,6 +121,9 @@
 			});
 
 		}).mouseleave(function() {
+
+			if(! animationEnabled) return;
+
 			$('.hexactive').velocity('stop', true).velocity('reverse').removeClass('hexactive');
 		});
 
