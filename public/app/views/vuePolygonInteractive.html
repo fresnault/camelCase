@@ -20,7 +20,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap frontend" data-title="{{thing.acteurs[1].nom}}" data-content="frontend-desc" data-color="#16A085">
+          <div class="hex-wrap frontend" data-title="{{thing.acteurs[1].nom}}" data-content="actor-{{thing.acteurs[1].nom}}" data-color="#16A085">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1"></div>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="grid-2">
-          <div class="hex-wrap html" data-title="{{thing.acteurs[2].nom}}" data-content="html-desc" data-color="#E34C26">
+          <div class="hex-wrap html" data-title="{{thing.acteurs[2].nom}}" data-content="actor-{{thing.acteurs[2].nom}}" data-color="#E34C26">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1"></div>
@@ -50,7 +50,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap css" data-title="{{thing.film.titre}}" data-content="css-desc" data-color="#0083de">
+          <div class="hex-wrap css" data-title="{{thing.film.titre}}" data-content="film" data-color="#0083de">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1"></div>
@@ -64,7 +64,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap jquery" data-title="{{thing.acteurs[3].nom}}" data-content="javascript-desc" data-color="#8cc84b">
+          <div class="hex-wrap jquery" data-title="{{thing.acteurs[3].nom}}" data-content="actor-{{thing.acteurs[3].nom}}" data-color="#8cc84b">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1"></div>
@@ -80,7 +80,7 @@
           </div>
         </div>
         <div class="grid-3">
-          <div class="hex-wrap gui" data-title="{{thing.acteurs[4].nom}}" data-content="gui-desc" data-color="#2C3E52">
+          <div class="hex-wrap gui" data-title="{{thing.acteurs[4].nom}}" data-content="actor-{{thing.acteurs[4].nom}}" data-color="#2C3E52">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1"></div>
@@ -94,7 +94,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap seo" data-title="{{thing.acteurs[5].nom}}" data-content="seo-desc" data-color="#C0392B">
+          <div class="hex-wrap seo" data-title="{{thing.acteurs[5].nom}}" data-content="actor-{{thing.acteurs[5].nom}}" data-color="#C0392B">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1"></div>
@@ -110,50 +110,55 @@
           </div>
         </div>
       </div>
-
       <div class="code-display">
         <div class="code-description">
-          <div class="backend-desc">
+          <div class="actor-{{thing.acteurs[0].nom}}">
             <p class="code-title"></p>
-            <p><span>Duration:</span>4 Years</p>
+
+            <p><span>Duration:</span>{{thing.acteurs[0].biographie}}</p>
             <p><span>Experience</span>PHP, SQL, NodeJS, Ruby</p>
-            <p><span>Pirouette</span>cacaouette</p>
+            <p><span>Biographie</span>{{thing.acteurs[0].biographie}}</p>
             <div class="code-icon"></div>
           </div>
-          <div class="frontend-desc">
+          <div class="actor-{{thing.acteurs[1].nom}}">
             <p class="code-title"></p>
             <p><span>Duration:</span>6 Years</p>
             <p><span>Experience</span>HTML, CSS, Javascript + Branches</p>
+            <p><span>Biographie</span>{{thing.acteurs[1].biographie}}</p>
             <div class="code-icon"></div>
           </div>
-          <div class="html-desc">
+          <div class="actor-{{thing.acteurs[2].nom}}">
             <p class="code-title"></p>
             <p><span>Duration:</span>6 Years</p>
             <p><span>Experience</span>HTML5 (most recent)</p>
+            <p><span>Biographie</span>{{thing.acteurs[2].biographie}}</p>
             <div class="code-icon"></div>
           </div>
-          <div class="css-desc">
+          <div class="film">
             <p class="code-title"></p>
             <p><span>Duration:</span>6 Years</p>
             <p><span>Experience</span>CSS3 (most recent)</p>
             <div class="code-icon"></div>
           </div>
-          <div class="javascript-desc">
+          <div class="actor-{{thing.acteurs[3].nom}}">
             <p class="code-title"></p>
             <p><span>Duration:</span>4 Years</p>
             <p><span>Experience</span>Javascript, Jquery, AngularJS, NodeJS</p>
+            <p><span>Biographie</span>{{thing.acteurs[3].biographie}}</p>
             <div class="code-icon"></div>
           </div>
-          <div class="gui-desc">
+          <div class="actor-{{thing.acteurs[4].nom}}">
             <p class="code-title"></p>
             <p><span>Duration:</span>4 Years</p>
             <p><span>Experience</span>Wordpress, Custom GUI Creation</p>
+            <p><span>Biographie</span>{{thing.acteurs[4].biographie}}</p>
             <div class="code-icon"></div>
           </div>
-          <div class="seo-desc">
+          <div class="actor-{{thing.acteurs[5].nom}}">
             <p class="code-title"></p>
             <p><span>Duration:</span>4 Years</p>
             <p><span>Experience</span>Up-to-date SEO Practices</p>
+            <p><span>Biographie</span>{{thing.acteurs[5].biographie}}</p>
             <div class="code-icon"></div>
           </div>
         </div>

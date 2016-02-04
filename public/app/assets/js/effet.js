@@ -2,11 +2,11 @@ $(document).ready(function () {
 	function hex_initial_animation() {
 		$(".hex-wrap,.hover-notify").velocity("transition.expandIn", { stagger: 150 });
 		$(".hex-wrap").velocity("callout.pulse");
-		$(".hoverblock").velocity("fadeOut", { delay: 3000, duration: 0 });
+		$(".hoverblock").velocity("fadeOut", { delay: 500, duration: 0 });
 		}
 	hex_initial_animation();
 
-var hoverdetect = setInterval(function(){ hovernotify() }, 3000);
+var hoverdetect = setInterval(function(){ hovernotify() }, 500);
 function hovernotify() {
     $(".hover-notify").velocity("callout.tada");
 }

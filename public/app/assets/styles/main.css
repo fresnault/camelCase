@@ -437,8 +437,8 @@ z-index: 3;
 }
 
 .hex-wrap .label svg, .hex-wrap .label img {
-height: 80px;
-width: 80px;
+height: 110px;
+width: 73px;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 }
