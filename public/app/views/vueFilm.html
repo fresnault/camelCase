@@ -51,12 +51,12 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex22"  data-title="{{movie.original_title}}" data-content="film" data-color="#0083de">
+          <div class="hex-wrap" id="hex22" data-title="{{movie.original_title}}" data-content="film" data-color="#0083de">
               <div class="hex-init"></div>
               <div class="hex-borders">
-                <div class="border-1 filmbordure">{{movie.tagline}}</div>
-                <div class="border-2 filmbordure">{{movie.vote_average}}</div>
-                <div class="border-3 filmbordure">{{movie.original_title}}</div>
+                <div class="border-1 filmbordure"></div>
+                <div class="border-2 filmbordure"></div>
+                <div class="border-3 filmbordure"></div>
               </div>
               <div class="label"><img class="arrondie"  src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"/></div>
             <div class="hexagon">
@@ -115,7 +115,7 @@
         <div class="code-description">
           <div class="actor-0">
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{movie.acteurs[0].biographie | limitTo:100}}...</p>
+            <p><span>Actrice:</span>{{movie.acteurs[0].name}}</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-1">
@@ -130,9 +130,9 @@
           </div>
           <div class="film">
             <p class="code-title"></p>
-            <p><span>Tagline:</span>{{movie.film.tagline}}</p>
-            <p><span>Note:</span>{{movie.film.note}}</p>
-            <p><span>Biographie:</span>{{movie.film.overview| limitTo:100}}...</p>
+            <p><span>Tagline:</span>{{movie.tagline}}</p>
+            <p><span>Note:</span>{{movie.vote_average}}</p>
+            <p><span>Biographie:</span>{{movie.original_title | limitTo:100}}</p>
             <div class="code-icon"></div>
           </div>
 
