@@ -1,7 +1,21 @@
 
-    <script src='app/assets/js/effet.js'></script>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<script src='app/assets/js/effet.js'></script>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<style>
+  .backdrop{
+    background-color:  #333;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .centerfold-wrap{
+    background-color: rgba(246,246,246,0.7);
+    padding: 5em;
+  }
+</style>
+
 <section class="intro" >
+<div class="backdrop" back-img="{{movie.backdrop_path}}"></div>
   <div class="intro-block">
     <div class="centerfold-wrap">
       <div class="hex-master-wrap">
@@ -121,35 +135,40 @@
           </div>
           <div class="actor-1">
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{movie.acteurs[1].biographie| limitTo:100}}...</p>
+            <p><span>Acteur:</span>{{movie.acteurs[0].name}}</p>
+            <p><span>Biographie:</span>{{movie.acteurs[0].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-2">
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{movie.acteurs[2].biographie| limitTo:100}}...</p>
+            <p><span>Acteur:</span>{{movie.acteurs[1].name}}</p>
+            <p><span>Biographie:</span>{{movie.acteurs[1].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="film">
             <p class="code-title"></p>
-            <p><span>Tagline:</span>{{movie.tagline}}</p>
-            <p><span>Note:</span>{{movie.vote_average}}</p>
-            <p><span>Biographie:</span>{{movie.original_title | limitTo:100}}</p>
+            <p>{{movie.tagline}}</p>
+            <p>{{movie.vote_average}} <i class="fa fa-star" style="color:gold"></i></p>
+            <p>{{movie.original_title | limitTo:100}}</p>
             <div class="code-icon"></div>
           </div>
 
           <div class="actor-3">
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{movie.acteurs[3].biographie| limitTo:100}}...</p>
+            <p><span>Acteur:</span>{{movie.acteurs[2].name}}</p>
+            <p><span>Biographie:</span>{{movie.acteurs[2].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-4">
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{movie.acteurs[4].biographie| limitTo:100}}...</p>
+            <p><span>Acteur:</span>{{movie.acteurs[3].name}}</p>
+            <p><span>Biographie:</span>{{movie.acteurs[3].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-5">
             <p class="code-title"></p>
-            <p><span>Biographie:</span>{{movie.acteurs[5].biographie| limitTo:100}}...</p>
+            <p><span>Acteur:</span>{{movie.acteurs[4].name}}</p>
+            <p><span>Biographie:</span>{{movie.acteurs[4].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
         </div>
