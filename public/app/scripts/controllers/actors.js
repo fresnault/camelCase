@@ -8,7 +8,7 @@
  * Controller of the camelCaseApp
  */
 angular.module('camelCaseApp')
-	.controller('actorsCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
+	.controller('actorsCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location, $rootScope) {
 
 
 		var idPerson = $routeParams.id;
@@ -19,11 +19,19 @@ angular.module('camelCaseApp')
 
 		$http.get(getActor).then(function(res) {
 			$scope.actor = res.data;
-			console.log($scope.actor);
+			$rootScope.historic.push({
+				'image':'https://image.tmdb.org/t/p/w92' + $scope.actor.profile_path,
+				'url':'actor/' + $scope.actor.id
+			});
+			$scope.historic = $rootScope.historic;
 		})
 
+		$scope.redirectTo = function(url) {
+			$location.url(url);
+		}
+
 		$http.get(getMovies).then(function(res) {
-			
+
 			var arr = res.data.cast.slice(0, 7);
 			$scope.actor.movies  = shuffle(arr);
 

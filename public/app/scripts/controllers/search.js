@@ -8,7 +8,9 @@
 * Controller of the camelCaseApp
 */
 angular.module('camelCaseApp')
-.controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY, $filter) {
+.controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY, $filter, $rootScope) {
+
+	$rootScope.historic = new Array();
 
 	var choices = $('#switch .choice'), text = $('#switch .or');
 	var searchBox = $('.search-box');
@@ -67,7 +69,7 @@ angular.module('camelCaseApp')
 		})
 
 		data.results = good;
-		
+
 		data.results = $filter('orderBy')(data.results, 'year');
 
 		return data;

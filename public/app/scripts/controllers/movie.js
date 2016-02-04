@@ -23,7 +23,7 @@ angular.module('camelCaseApp')
 	    };
 	})
 
-	.controller('movieCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
+	.controller('movieCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location, $rootScope) {
 
 		var idMovie = $routeParams.id;
 		$scope.movie = {};
@@ -34,7 +34,15 @@ angular.module('camelCaseApp')
 
 		$http.get(getMovie).then(function(res) {
 			$scope.movie = res.data;
-			console.log($scope.movie);
+			if($rootScope.historic == null) {
+				$rootScope.historic = new Array();
+			}
+			$rootScope.historic.push({
+				'image':'https://image.tmdb.org/t/p/w92' + $scope.movie.poster_path,
+				'url':'movie/' + $scope.movie.id
+			});
+			$scope.historic = $rootScope.historic;
+			console.log($scope.historic);
 		})
 
 		$http.get(getActors).then(function(res) {
@@ -51,6 +59,10 @@ angular.module('camelCaseApp')
 
 		$scope.moveToHomePage = function() {
 			$location.url('/');
+		}
+
+		$scope.redirectTo = function(url) {
+			$location.url(url);
 		}
 
 		$scope.getActors = function() {
