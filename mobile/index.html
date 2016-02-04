@@ -45,7 +45,6 @@
 			if (window.DeviceOrientationEvent) {
 			  // Listen for the deviceorientation event and handle the raw data
 			  window.addEventListener('deviceorientation', function(eventData) {
-			  					alert('Device orientation ' + eventData.gamma);
 
 			    // gamma is the left-to-right tilt in degrees, where right is positive
 			    var tiltLR = eventData.gamma;
