@@ -51,7 +51,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex22" data-title="{{actor.original_title}}" data-content="film" data-color="#E34C26">
+          <div class="hex-wrap" id="hex22" data-title="{{actor.name}}" data-content="film" data-color="#E34C26">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -115,7 +115,7 @@
         <div class="code-description">
           <div class="actor-0">
             <p class="code-title"></p>
-            <p><span>Acteur:</span>{{actor.acteurs[0].name}}</p>
+            <p><span>Titre original:</span>{{actor.acteurs[0].name}}</p>
             <p><span>Biographie:</span>{{actor.acteurs[0].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
@@ -131,9 +131,10 @@
           </div>
           <div class="film">
             <p class="code-title"></p>
-            <p><span>Tagline:</span>{{actor.tagline}}</p>
-            <p><span>Note:</span>{{actor.vote_average}}</p>
-            <p><span>Biographie:</span>{{actor.original_title | limitTo:100}}</p>
+            <p><span>Date de naissance:</span>{{actor.birthday}}</p>
+            <p><span>Lieu de naissance:</span>{{actor.place_of_birth}}</p>
+            <p><span>Popularité:</span>{{actor.popularity}}</p>
+            <p><span>Biographie:</span>{{actor.biography | limitTo:100}}</p>
             <div class="code-icon"></div>
           </div>
 
