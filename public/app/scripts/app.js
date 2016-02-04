@@ -34,6 +34,12 @@ angular
         controller: '',
         controllerAs: ''
       })
+      .when('/vuePolygonInteractive', {
+        templateUrl: 'app/views/vuePolygonInteractive.html',
+        controller: 'vuePolygonInteractiveCtrl',
+        controllerAs: 'vuePolygonInteractive'
+      })
+
 
       .when('/about', {
         templateUrl: 'app/views/about.html',
