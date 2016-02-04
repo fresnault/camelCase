@@ -16,6 +16,7 @@ angular.module('camelCaseApp')
 				titre : 'La mort dans la peau',
 				tagline:'Ils lui ont volé son identité. Il veut la reprendre.',
 				overview : 'Depuis deux ans, l\'ex-agent / tueur à gages de la CIA Jason Bourne et sa compagne Marie ont réussi à tromper leurs poursuivants au prix d\'une vigilance sans faille. Ce paisible village de Goa aurait dû être leur dernier refuge. Vain espoir. Deux ans plus tôt, Jason avait juré de se venger de quiconque le relancerait. Il tiendra parole.',
+				note : 8,
 				image : 'https://image.tmdb.org/t/p/w300/hfih7VmwTgFYSg4a1ZVYojNDltv.jpg'
 			},
 			acteurs : [

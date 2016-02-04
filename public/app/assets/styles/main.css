@@ -354,6 +354,14 @@ border-color: #333;
 backface-visibility: hidden;
 }
 
+.filmbordure{
+  border-color: #0083de;
+}
+
+.actorbordure{
+  border-color: #E34C26;
+}
+
 .border-2 {
 transform: rotate(60deg);
 }
@@ -436,9 +444,15 @@ align-items: center;
 z-index: 3;
 }
 
-.hex-wrap .label svg, .hex-wrap .label img {
+.hex-wrap .label svg, .hex-wrap .label .imgactor {
 height: 110px;
 width: 73px;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+.hex-wrap .label svg, .hex-wrap .label img {
+height: 79px;
+width: 140px;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 }
