@@ -19,17 +19,10 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'app/views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-
-      .when('/movies', {
         templateUrl: 'app/views/movies.html',
         controller: 'MoviesCtrl',
         controllerAs: 'movies'
       })
-
       .when('/vuePolygon', {
         templateUrl: 'app/views/vuePolygon.html',
         controller: '',
@@ -40,6 +33,7 @@ angular
         controller: 'vueFilmCtrl',
         controllerAs: 'vueFilm'
       })
+
       .otherwise({
         redirectTo: '/'
       });

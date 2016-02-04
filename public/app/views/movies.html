@@ -1,26 +1,21 @@
-<div class="jumbotron">
-    <legend>Form title</legend>
+<div class="search-wrapper cf">
 
-    <div class="form-group">
-      <label for="">label</label>
-      <input type="text" placeholder="Nom d'un film, d'un acteur..." ng-model="searchQuery" class="form-control" ng-autocomplete options="options" details="details"/>
-
-      <angucomplete-alt id="movies"
-              placeholder="Nom d'un film, d'un acteur..."
-              pause="400"
-              remote-url="http://api.themoviedb.org/3/search/movie?api_key=16f6aa27277494afd13f5497d6ceba9e&query="
-              remote-url-data-field="results"
-              title-field="original_title,vote_average,year"
-              description-field="overview"
-              image-field="poster_path"
-              input-class="form-control form-control-small"
-              match-class="highlight"
-              selected-object="selectedMovie"
-              objectSelectedCallback="selectedMovie"
-              remote-url-response-formatter="addPathToUrl">
     </div>
-    <button type="submit" class="btn btn-primary" ng-click="search()">Search</button>
-
-  {{resultat}}
-
-</div>
+    <form>
+        <div class="search-box">
+          <angucomplete-alt id="movies"
+                  placeholder="What are you searching for?"
+                  pause="400"
+                  remote-url="http://api.themoviedb.org/3/search/movie?api_key=16f6aa27277494afd13f5497d6ceba9e&query="
+                  remote-url-data-field="results"
+                  title-field="original_title,vote_average,year"
+                  description-field="overview"
+                  image-field="poster_path"
+                  input-class="search-keyword"
+                  match-class="highlight"
+                  selected-object="selectedMovie"
+                  objectSelectedCallback="selectedMovie"
+                  remote-url-response-formatter="addPathToUrl" />
+          <button class="search-button" type="submit"></button>
+        </div>
+      </form>

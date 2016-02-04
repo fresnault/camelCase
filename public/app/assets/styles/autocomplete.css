@@ -1,3 +1,61 @@
+@import url(http://fonts.googleapis.com/css?family=Enriqueta);
+body {
+  margin: 50px;
+  padding: 0;
+  background: royalblue;
+  background: url(http://webneel.com/wallpaper/sites/default/files/images/04-2013/Rainy-Weather_2.jpg);
+  background-size: cover;
+}
+
+.search {
+  float: left;
+  font-family: "Enriqueta", Garamond, serif;
+  font-size: 18px;
+  letter-spacing: -10pt;
+}
+
+.search-box {
+  float: left;
+  width: 90%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.search-keyword {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+}
+
+.search-button {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  right: 12px;
+  background: url(https://dl.dropboxusercontent.com/u/3420025/Code/Misc/CodePen/rodeo-003/search/magnifying-glass.svg) no-repeat top left;
+  width: 17px;
+  height: 17px;
+  background-size: 17px;
+  margin-top: 14px;
+  margin-right: 8.5px;
+  opacity: 0.65;
+}
+.search-button:before {
+  display: block;
+  content: "";
+}
+
+
 .angucomplete-holder {
     position: relative;
 }
@@ -15,7 +73,7 @@
     /*top: 32px;
     left: 0px;
     */
-    margin-top: -6px;
+    margin-top: 60px;
     background-color: #ffffff;
 }
 
