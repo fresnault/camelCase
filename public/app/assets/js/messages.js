@@ -1,3 +1,4 @@
+			var io = io();
 io.on('connection', function (socket) {
 
 /*
