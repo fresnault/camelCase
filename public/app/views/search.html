@@ -9,7 +9,7 @@
           <a ng-click="moveToMovie(movie.id)">
             <div class="content">
               <img ng-src="{{movie.poster_path}}">
-              <h1>{{movie.original_title}}</h1>
+              <h1>{{movie.original_title | uppercase}}</h1>
             </div>
           </a>
         </li>

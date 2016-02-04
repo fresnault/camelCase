@@ -253,7 +253,6 @@
   font-size: 9px;
   margin: -25% 0px 0px -17%;
   color: #FFFFFF;
-  text-shadow: #000000 1px 1px 0px;
   position: absolute;
   z-index: 1;
   text-align: center;
@@ -262,6 +261,7 @@
   text-transform: capitalize;
   opacity: 0;
   display: block;
+  letter-spacing: 1pt;
 }
 
 #elements li .content:hover {
