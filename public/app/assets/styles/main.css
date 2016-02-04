@@ -266,49 +266,49 @@ opacity: .2;
 z-index: -1;
 }
 
-.backend-desc.desc-active::after {
+.actor-0.desc-active::after {
 background: url(http://i.imgur.com/Dc8HgeM.png);
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
-.frontend-desc.desc-active::after {
+.actor-1.desc-active::after {
 background: url(http://i.imgur.com/QcfXSkf.jpg);
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
-.html-desc.desc-active::after {
+.actor-2.desc-active::after {
 background: url(http://i.imgur.com/0g3HZSF.jpg);
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
-.css-desc.desc-active::after {
+.film.desc-active::after {
 background: url(http://i.imgur.com/poC0TYE.png);
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
-.javascript-desc.desc-active::after {
+.actor-3.desc-active::after {
 background: url(http://i.imgur.com/QjrmHkb.jpg);
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
-.gui-desc.desc-active::after {
+.actor-4.desc-active::after {
 background: url(http://i.imgur.com/YmCqPpk.jpg);
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
-.seo-desc.desc-active::after {
+.actor-5.desc-active::after {
 background: url(http://i.imgur.com/V9vAVUO.png);
 background-repeat: no-repeat;
 background-size: contain;
