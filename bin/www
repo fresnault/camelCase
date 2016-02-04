@@ -25,18 +25,9 @@ var io = require('socket.io').listen(server);
 
 io.on('connection', function (socket) {
 
-/*
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-*/
-  socket.emit('HelloFromServeur');
-console.log('un nouveau client !!!');
   socket.on('mouvement', function(data){
     socket.broadcast.emit('mouvement', data);
-    console.log('ligne : ' + data.ligne);
-    console.log('col : ' + data.col);
+    console.log('hexa ' + data.ligne +' : ' + data.col);
   });
 
 });

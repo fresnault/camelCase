@@ -42,7 +42,7 @@ angular.module('camelCaseApp')
 				'url':'movie/' + $scope.movie.id
 			});
 			$scope.historic = $rootScope.historic;
-			console.log($scope.historic);
+			//console.log($scope.historic);
 		})
 
 		$http.get(getActors).then(function(res) {
@@ -71,7 +71,7 @@ angular.module('camelCaseApp')
 				$http.get(getDetailedActor).then(function(res) {
 					key.info = res.data;
 
-					console.log(key.info);
+					//console.log(key.info);
 				})
 			})
 
