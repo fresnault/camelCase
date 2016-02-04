@@ -8,7 +8,7 @@
  * Controller of the camelCaseApp
  */
 angular.module('camelCaseApp')
-	.controller('vueFilmCtrl', function($scope) {
+	.controller('vueFilmCtrl', function($scope, ThingService) {
 
 		$scope.thing = {
 			type : 1,
