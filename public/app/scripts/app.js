@@ -34,10 +34,10 @@ angular
         controller: '',
         controllerAs: ''
       })
-      .when('/vuePolygonInteractive', {
-        templateUrl: 'app/views/vuePolygonInteractive.html',
-        controller: 'vuePolygonInteractiveCtrl',
-        controllerAs: 'vuePolygonInteractive'
+      .when('/vueFilm', {
+        templateUrl: 'app/views/vueFilm.html',
+        controller: 'vueFilmCtrl',
+        controllerAs: 'vueFilm'
       })
 
 

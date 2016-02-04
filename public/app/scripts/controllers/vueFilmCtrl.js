@@ -8,13 +8,13 @@
  * Controller of the camelCaseApp
  */
 angular.module('camelCaseApp')
-	.controller('vuePolygonInteractiveCtrl', function($scope) {
+	.controller('vueFilmCtrl', function($scope) {
 
 		$scope.thing = {
 			type : 1,
 			film : {
 				titre : 'La mort dans la peau',
-				Tagline:'Ils lui ont volé son identité. Il veut la reprendre.',
+				tagline:'Ils lui ont volé son identité. Il veut la reprendre.',
 				overview : 'Depuis deux ans, l\'ex-agent / tueur à gages de la CIA Jason Bourne et sa compagne Marie ont réussi à tromper leurs poursuivants au prix d\'une vigilance sans faille. Ce paisible village de Goa aurait dû être leur dernier refuge. Vain espoir. Deux ans plus tôt, Jason avait juré de se venger de quiconque le relancerait. Il tiendra parole.',
 				image : 'https://image.tmdb.org/t/p/w300/hfih7VmwTgFYSg4a1ZVYojNDltv.jpg'
 			},

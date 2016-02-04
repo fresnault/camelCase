@@ -267,49 +267,49 @@ z-index: -1;
 }
 
 .actor-0.desc-active::after {
-background: url(http://i.imgur.com/Dc8HgeM.png);
+/*://i.imgur.com/Dc8HgeM.png);*/
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
 .actor-1.desc-active::after {
-background: url(http://i.imgur.com/QcfXSkf.jpg);
+/*://i.imgur.com/QcfXSkf.jpg);*/
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
 .actor-2.desc-active::after {
-background: url(http://i.imgur.com/0g3HZSF.jpg);
+/*://i.imgur.com/0g3HZSF.jpg);*/
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
 .film.desc-active::after {
-background: url(http://i.imgur.com/poC0TYE.png);
+/*://i.imgur.com/poC0TYE.png);*/
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
 .actor-3.desc-active::after {
-background: url(http://i.imgur.com/QjrmHkb.jpg);
+/*://i.imgur.com/QjrmHkb.jpg);*/
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
 .actor-4.desc-active::after {
-background: url(http://i.imgur.com/YmCqPpk.jpg);
+/*://i.imgur.com/YmCqPpk.jpg);*/
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
 }
 
 .actor-5.desc-active::after {
-background: url(http://i.imgur.com/V9vAVUO.png);
+/*://i.imgur.com/V9vAVUO.png);*/
 background-repeat: no-repeat;
 background-size: contain;
 background-position: right center;
