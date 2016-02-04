@@ -12,7 +12,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="app/styles/main.css">
+    <link rel="stylesheet" href="app/assets/styles/main.css">
     <!-- endbuild -->
   </head>
   <body ng-app="camelCaseApp">
@@ -40,6 +40,7 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
+              <li><a ng-href="#/vuePolygon">vuePolygon</a></li>
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
             </ul>
@@ -48,16 +49,18 @@
       </div>
     </div>
 
-    <div class="container">
+    <!--<div class="container">-->
     <div ng-view=""></div>
-    </div>
+    <!--</div>-->
 
+
+<!--
     <div class="footer">
       <div class="container">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
-
+-->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -81,12 +84,16 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.ui.js'></script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="app/scripts/app.js"></script>
-        <script src="app/scripts/controllers/main.js"></script>
-        <script src="app/scripts/controllers/about.js"></script>
-        <script src="app/scripts/controllers/movies.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+    <script src="app/scripts/app.js"></script>
+    <script src="app/scripts/controllers/main.js"></script>
+    <script src="app/scripts/controllers/about.js"></script>
+    <script src="app/scripts/controllers/movies.js"></script>
         <!-- endbuild -->
 </body>
 </html>

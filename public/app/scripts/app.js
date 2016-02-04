@@ -29,6 +29,12 @@ angular
         controllerAs: 'movies'
       })
 
+      .when('/vuePolygon', {
+        templateUrl: 'app/views/vuePolygon.html',
+        controller: '',
+        controllerAs: ''
+      })
+
       .when('/about', {
         templateUrl: 'app/views/about.html',
         controller: 'AboutCtrl',
