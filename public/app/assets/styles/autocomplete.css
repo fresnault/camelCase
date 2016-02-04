@@ -116,6 +116,8 @@
 }
 
 .angucomplete-image {
+  max-width: 92px;
+  margin: 10px 0;
     /*height: 34px;
     width: 34px;
     border-radius: 50%;*/
@@ -126,10 +128,10 @@
 
 .angucomplete-image-default {
     /* Add your own default image here*/
-    background-image: url('default.jpg');
-
+    background-image: url('assets/styles/default.jpg');
     background-position: center;
     background-size: contain;
+    padding-left: 92px;
     width: 34px;
 }
 
@@ -214,6 +216,7 @@
 #elements {
   width: 100%;
   margin: 80px auto;
+  max-width: 1220px;
 }
 
 #elements li {
