@@ -23,7 +23,7 @@ angular.module('camelCaseApp')
 	    };
 	})
 
-	.controller('vueFilmCtrl', function($http, $scope, ThingService, API_KEY, $routeParams) {
+	.controller('vueFilmCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
 
 		var idMovie = $routeParams.id;
 		$scope.movie = {};
@@ -34,7 +34,6 @@ angular.module('camelCaseApp')
 
 		$http.get(getMovie).then(function(res) {
 			$scope.movie = res.data;
-			console.log($scope.movie);
 		})
 
 		$http.get(getActors).then(function(res) {
@@ -42,16 +41,24 @@ angular.module('camelCaseApp')
 			$scope.getActors();
 		})
 
+
+		$scope.selectedActor = function(selected) {
+			console.log(selected);
+			$location.url('actor/'+selected.id);
+		}
+
 		$scope.getActors = function() {
 			$scope.movie.acteurs.forEach(function(key, value) {
-
 
 				var getDetailedActor = 'http://api.themoviedb.org/3/person/' + key.id + '?api_key=' + API_KEY;
 				$http.get(getDetailedActor).then(function(res) {
 					key.info = res.data;
+
 					console.log(key.info);
 				})
 			})
+
+			afficherEffet(2,2);
 		}
 
 		//$scope.thing = ThingService.recupererFilmBidon();
