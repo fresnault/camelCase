@@ -8,9 +8,9 @@
  * Controller of the camelCaseApp
  */
 angular.module('camelCaseApp')
-	.controller('vueFilmCtrl', function($http, $scope, ThingService, API_KEY) {
+	.controller('vueFilmCtrl', function($http, $scope, ThingService, API_KEY, $routeParams) {
 
-		var idMovie = 140607;
+		var idMovie = $routeParams.id;
 		$scope.movie = {};
 
 		var getMovie = 'http://api.themoviedb.org/3/movie/' + idMovie + '?api_key=' + API_KEY;
