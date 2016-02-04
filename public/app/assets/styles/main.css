@@ -450,14 +450,11 @@ z-index: 3;
 }
 
 .hex-wrap .label svg, .hex-wrap .label .imgactor {
-height: 110px;
-width: 73px;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 }
 .hex-wrap .label svg, .hex-wrap .label img {
-height: 79px;
-width: 140px;
+width: 75px;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 }
