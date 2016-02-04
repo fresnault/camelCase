@@ -1,21 +1,29 @@
-<div class="search-wrapper cf">
+<script src='app/assets/js/effet.js'></script>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<section class="intro" >
+  <div class="intro-block" style="align-items: baseline;">
+    <div class="search-wrapper cf">
 
-    </div>
-    <form>
+
+      <form>
         <div class="search-box">
           <angucomplete-alt id="movies"
-                  placeholder="What are you searching for?"
-                  pause="400"
-                  remote-url="http://api.themoviedb.org/3/search/movie?api_key=16f6aa27277494afd13f5497d6ceba9e&query="
-                  remote-url-data-field="results"
-                  title-field="original_title,vote_average,year"
-                  description-field="overview"
-                  image-field="poster_path"
-                  input-class="search-keyword"
-                  match-class="highlight"
-                  selected-object="selectedMovie"
-                  objectSelectedCallback="selectedMovie"
-                  remote-url-response-formatter="addPathToUrl" />
+          placeholder="What are you searching for?"
+          pause="100"
+          auto-match=true
+          remote-url="http://api.themoviedb.org/3/search/movie?api_key=16f6aa27277494afd13f5497d6ceba9e&query="
+          remote-url-data-field="results"
+          title-field="original_title,vote_average,year"
+          description-field="overview"
+          image-field="poster_path"
+          input-class="search-keyword"
+          match-class="highlight"
+          selected-object="selectedMovie"
+          objectSelectedCallback="selectedMovie"
+          remote-url-response-formatter="addPathToUrl" />
           <button class="search-button" type="submit"></button>
         </div>
       </form>
+    </div>
+  </div>
+</section>

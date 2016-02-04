@@ -1,9 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Enriqueta);
-body {
+.search-wrapper {
   margin: 50px;
   padding: 0;
-  background: royalblue;
-  background: url(http://webneel.com/wallpaper/sites/default/files/images/04-2013/Rainy-Weather_2.jpg);
   background-size: cover;
 }
 
