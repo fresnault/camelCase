@@ -24,16 +24,20 @@ angular.module('camelCaseApp')
 
 		$http.get(getActors).then(function(res) {
 			$scope.movie.acteurs = res.data.cast.slice(0, 7);
+			$scope.getActors();
+		})
+
+		$scope.getActors = function() {
 			$scope.movie.acteurs.forEach(function(key, value) {
-				console.log(key);
+
 
 				var getDetailedActor = 'http://api.themoviedb.org/3/person/' + key.id + '?api_key=' + API_KEY;
 				$http.get(getDetailedActor).then(function(res) {
-					key.biographie = res.data.biography;
-					console.log($scope.movie);
+					key.info = res.data;
+					console.log(key.info);
 				})
 			})
-		})
+		}
 
 		//$scope.thing = ThingService.recupererFilmBidon();
 
