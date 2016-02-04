@@ -13,7 +13,8 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    'angucomplete-alt'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -34,7 +35,7 @@ angular
         controller: '',
         controllerAs: ''
       })
-      .when('/vueFilm', {
+      .when('/vueFilm/:id', {
         templateUrl: 'app/views/vueFilm.html',
         controller: 'vueFilmCtrl',
         controllerAs: 'vueFilm'
