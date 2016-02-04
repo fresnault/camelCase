@@ -57,7 +57,7 @@
 			    // alpha is the compass direction the device is facing in degrees
 			    var dir = eventData.alpha;
 			    //if(Math.abs(ancienneValueLR) - Math.abs(tiltLR) > 1  )	{
-				   $('#positionPhone').text('tiltLR : ' + tiltLR.substring(0,3) + ';<br /> tiltFB :' + tiltFB.substring(0,3)  + ';<br /> dir :' + dir.substring(0,3)  );
+				   $('#positionPhone').text('tiltLR : ' + tiltLR.toString().substring(0,3) + ';<br /> tiltFB :' + tiltFB.toString().substring(0,3)  + ';<br /> dir :' + dir.toString().substring(0,3)  );
 
 			    //}
 			    // call our orientation event handler
