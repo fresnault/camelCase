@@ -21,7 +21,7 @@
       <div class="hex-master-wrap">
         <!--<div class="hover-notify">Hover Me!</div>-->
         <div class="grid-1">
-          <div class="hex-wrap" id="hex11" data-title="{{movie.acteurs[0].character}}" data-content="actor-0" data-color="#E34C26">
+          <div class="hex-wrap" id="hex11" data-title="{{movie.acteurs[0].character}}" data-content="actor-0" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[0])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -35,7 +35,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex12" data-title="{{movie.acteurs[1].character}}" data-content="actor-1" data-color="#E34C26">
+          <div class="hex-wrap" id="hex12" data-title="{{movie.acteurs[1].character}}" data-content="actor-1" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[1])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="grid-2">
-          <div class="hex-wrap" id="hex21" data-title="{{movie.acteurs[2].character}}" data-content="actor-2" data-color="#E34C26">
+          <div class="hex-wrap" id="hex21" data-title="{{movie.acteurs[2].character}}" data-content="actor-2" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[2])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -79,7 +79,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex23" data-title="{{movie.acteurs[3].character}}" data-content="actor-3" data-color="#E34C26">
+          <div class="hex-wrap" id="hex23" data-title="{{movie.acteurs[3].character}}" data-content="actor-3" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[3])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="grid-3">
-          <div class="hex-wrap" id="hex31" data-title="{{movie.acteurs[4].character}}" data-content="actor-4" data-color="#E34C26">
+          <div class="hex-wrap" id="hex31" data-title="{{movie.acteurs[4].character}}" data-content="actor-4" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[4].id)">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -109,7 +109,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex32" data-title="{{movie.acteurs[5].character}}" data-content="actor-5" data-color="#E34C26">
+          <div class="hex-wrap" id="hex32" data-title="{{movie.acteurs[5].character}}" data-content="actor-5" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[5].id)">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -135,39 +135,43 @@
           </div>
           <div class="actor-1">
             <p class="code-title"></p>
-            <p><span>Acteur:</span>{{movie.acteurs[0].name}}</p>
+            <p><span>Acteur:</span>{{movie.acteurs[1].name}}</p>
             <p><span>Biographie:</span>{{movie.acteurs[0].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-2">
             <p class="code-title"></p>
-            <p><span>Acteur:</span>{{movie.acteurs[1].name}}</p>
+            <p><span>Acteur:</span>{{movie.acteurs[2].name}}</p>
             <p><span>Biographie:</span>{{movie.acteurs[1].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
+
+          
           <div class="film">
             <p class="code-title"></p>
-            <p>{{movie.tagline}}</p>
-            <p>{{movie.vote_average}} <i class="fa fa-star" style="color:gold"></i></p>
-            <p>{{movie.original_title | limitTo:100}}</p>
+            <p ng-if="movie.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{movie.release_date}}</p>
+            <p ng-if="movie.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in movie.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{movie.tagline}}</p>
+            <p ng-if="movie.original_title != movie.title "> <span>Titre original:</span>{{movie.original_title }}</p>
             <div class="code-icon"></div>
           </div>
 
           <div class="actor-3">
             <p class="code-title"></p>
-            <p><span>Acteur:</span>{{movie.acteurs[2].name}}</p>
+            <p><span>Acteur:</span>{{movie.acteurs[3].name}}</p>
             <p><span>Biographie:</span>{{movie.acteurs[2].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-4">
             <p class="code-title"></p>
-            <p><span>Acteur:</span>{{movie.acteurs[3].name}}</p>
+            <p><span>Acteur:</span>{{movie.acteurs[4].name}}</p>
             <p><span>Biographie:</span>{{movie.acteurs[3].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-5">
             <p class="code-title"></p>
-            <p><span>Acteur:</span>{{movie.acteurs[4].name}}</p>
+            <p><span>Acteur:</span>{{movie.acteurs[5].name}}</p>
             <p><span>Biographie:</span>{{movie.acteurs[4].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
