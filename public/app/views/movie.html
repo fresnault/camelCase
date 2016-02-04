@@ -9,7 +9,7 @@
     position: absolute;
   }
   .centerfold-wrap{
-    background-color: rgba(246,246,246,0.7);
+    background-color: rgba(246,246,246,0.6);
     padding: 5em;
   }
   
@@ -70,7 +70,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex22" data-title="{{movie.original_title}}" data-content="film" data-color="#0083de">
+          <div class="hex-wrap" id="hex22" data-title="{{movie.title}}" data-content="film" data-color="#0083de">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 filmbordure"></div>
@@ -156,9 +156,9 @@
             <p class="code-title"></p>
             <p ng-if="movie.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
             <p><span>Sortie le:</span>{{movie.release_date | date : 'dd MMMM yyyy'}}</p>
-            <p ng-if="movie.genres !== undefined"> <span>Genre:</span><span class="label label-primary" ng-repeat="genre in movie.genres" >{{genre.name}}</span> </p>
-            <p><span>Accroche:</span>{{movie.tagline}}</p>
-            <p ng-if="movie.original_title != movie.title "> <span>Titre original:</span>{{movie.original_title }}</p>
+            <p ng-if="movie.genres !== undefined"> <span>Genre(s):</span><span class="label label-primary" ng-repeat="genre in movie.genres" >{{genre.name}}</span> </p>
+            <p ng-if="movie.overview"><span>Résumé:</span>{{movie.overview | limitTo:200}}...</p>
+            <p ng-if="movie.original_title && (movie.original_title != movie.title) "> <span>Titre original:</span>{{movie.original_title }}</p>
             <div class="code-icon"></div>
           </div>
 
