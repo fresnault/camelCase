@@ -31,8 +31,8 @@ io.on('connection', function (socket) {
     console.log(data);
   });
 */
+  socket.emit('HelloFromServeur');
 console.log('un nouveau client !!!');
-
   socket.on('mouvement', function(data){
     socket.broadcast.emit('mouvement', data);
     console.log('ligne : ' + data.ligne);
@@ -41,6 +41,7 @@ console.log('un nouveau client !!!');
 
 });
 
+ 
 
 /**
  * Listen on provided port, on all network interfaces.

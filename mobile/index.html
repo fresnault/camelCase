@@ -77,13 +77,15 @@
 			}
 			var hexagoneAncien = { ligne : 2, col: 2};
 			function envoyerMessageServeur(ligne, col){
+
 				if(hexagoneAncien.ligne != ligne || hexagoneAncien.col != col  ){
+					//console.log('Changement de valeur ' + ligne + ':'+col);
 					hexagoneAncien.ligne = ligne;
 					hexagoneAncien.col = col;
 					var data = {};
 					data.ligne = ligne;
-					dat.col = col;
-				  	io.emit('mouvement', data);
+					data.col = col;
+				  	socket.emit('mouvement', data);
 				}
 			}
 			
