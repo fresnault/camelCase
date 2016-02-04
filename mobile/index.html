@@ -33,8 +33,11 @@
 		<script>window.jQuery || document.write('<script src="libs/jquery-1.10.1.min.js"><\/script>')</script>
 		<script>
 			var socket = io();
+
 			socket.on('connection', function(socket){
-			  console.log('YOOO');
+				socket.on('mouvement', function(data){
+					console.log('reçu' + data);
+				});
 			});
 			function test(){
 				//window.location.href = "sms:+375292771265?body=Hello from Appery.io!";
@@ -59,6 +62,8 @@
 			    //if(Math.abs(ancienneValueLR) - Math.abs(tiltLR) > 1  )	{
 				 //  $('#positionPhone').text('tiltLR : ' + tiltLR.toString().substring(0,3) + ';<br /> tiltFB :' + tiltFB.toString().substring(0,3)  + ';<br /> dir :' + dir.toString().substring(0,3)  );
 				 alert('Hey' + getOrientationString(tiltFB, tiltLR));
+
+
  				$('#positionPhone').text(getOrientationString(tiltFB, tiltLR) );
 
 			    //}
@@ -71,6 +76,13 @@
 
 			}
 
+			function envoyerMessageServeur(ligne, col){
+					var data = {};
+					data.ligne = ligne;
+					dat.col = col;
+				  	io.emit('mouvement', data);
+
+			}
 			function getOrientationString(tiltFB, tiltLR){
 				var lr = getLrOrientation(tiltLR);
 				var fb = getFbOrientation(tiltFB);

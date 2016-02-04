@@ -7,7 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('camelCase:server');
 var http = require('http');
-
 /**
  * Get port from environment and store in Express.
  */
@@ -32,7 +31,10 @@ io.on('connection', function (socket) {
     console.log(data);
   });
 */
-
+  socket.on('mouvement', function(data){
+    console.log('ligne : ' + data.ligne);
+    console.log('col : ' + data.col);
+  });
 
 });
 
