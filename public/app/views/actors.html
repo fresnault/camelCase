@@ -4,11 +4,34 @@
     opacity: 0;
     cursor: auto;
   }
+
+  .backdrop{
+    background-color:  #333;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url(http://edoardoballerini.com/blog/wp-content/uploads/2010/11/stage-w-chair.jpg);
+    background-position: center;
+
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+  }
+
+  .centerfold-wrap{
+    background-color: rgba(246,246,246,0.6);
+    padding: 5em;
+  }
+
 </style>
 
 <script src='app/assets/js/effet.js'></script>
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 <section class="intro" >
+
+<div class="backdrop"></div>
   <div class="intro-block">
     <div class="centerfold-wrap">
       <i ng-click="moveToHomePage()" class="backBtn fa fa-arrow-left fa-4x img-circle"></i>
@@ -132,7 +155,7 @@
             <p><span>Sortie le:</span>{{actor.movies[0].info.release_date | date : 'dd MMMM yyyy' }}</p>
             <p ng-if="actor.movies[0].info.genres !== undefined"> <span>Genre:</span><span  class="label label-primary" ng-repeat="genre in actor.movies[0].info.genres" >{{genre.name}}</span></p>
             <p><span>Accroche:</span>{{actor.movies[0].info.tagline}}</p>
-            <p ng-if="actor.movies[0].info.info.original_title != actor.movies[0]. | date : 'dd MMMM yyyy' info.info.title "> <span>Titre original:</span>{{actor.movies[0].info.original_title }}</p>
+            <p ng-if="actor.movies[0].info.original_title != actor.movies[0].info.title "> <span>Titre original:</span>{{actor.movies[0].info.original_title }}</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-1">
@@ -141,7 +164,7 @@
             <p><span>Sortie le:</span>{{actor.movies[1].info.release_date | date : 'dd MMMM yyyy' }}</p>
             <p ng-if="actor.movies[1].info.genres !== undefined"> <span>Genre:</span><span  class="label label-primary" ng-repeat="genre in actor.movies[1].info.genres" >{{genre.name}}</span></p>
             <p><span>Accroche:</span>{{actor.movies[1].info.tagline}}</p>
-            <p ng-if="actor.movies[1].info.info.original_title != actor.movies[1].info.info.title "> <span>Titre original:</span>{{actor.movies[1].info.original_title }}</p>
+            <p ng-if="actor.movies[1].info.original_title != actor.movies[1].info.title "> <span>Titre original:</span>{{actor.movies[1].info.original_title }}</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-2">
@@ -150,15 +173,14 @@
             <p><span>Sortie le:</span>{{actor.movies[2].info.release_date | date : 'dd MMMM yyyy' }}</p>
             <p ng-if="actor.movies[2].info.genres !== undefined"> <span>Genre:</span><span  class="label label-primary" ng-repeat="genre in actor.movies[2].info.genres" >{{genre.name}}</span></p>
             <p><span>Accroche:</span>{{actor.movies[2].info.tagline}}</p>
-            <p ng-if="actor.movies[2].info.info.original_title != actor.movies[2].info.info.title "> <span>Titre original:</span>{{actor.movies[0].info.original_title }}</p>
+            <p ng-if="actor.movies[2].info.original_title != actor.movies[2].info.title "> <span>Titre original:</span>{{actor.movies[0].info.original_title }}</p>
             <div class="code-icon"></div>
           </div>
           <div class="film">
             <p class="code-title"></p>
-            <p><span>Date de naissance:</span>{{actor.birthday  | date : 'dd MMMM yyyy'}}</p>
-            <p><span>Lieu de naissance:</span>{{actor.place_of_birth}}</p>
+            <p><span>Naissance:</span>{{actor.birthday  | date : 'dd MMMM yyyy'}} - {{actor.place_of_birth}}</p>
             <p><span>Popularité:</span>{{actor.popularity}}</p>
-            <p><span>Biographie:</span>{{actor.biography | limitTo:100}}</p>
+            <p><span>Biographie:</span>{{actor.biography | limitTo:200}}...</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-3">
@@ -167,7 +189,7 @@
             <p><span>Sortie le:</span>{{actor.movies[3].info.release_date | date : 'dd MMMM yyyy' }}</p>
             <p ng-if="actor.movies[3].info.genres !== undefined"> <span>Genre:</span><span  class="label label-primary" ng-repeat="genre in actor.movies[3].info.genres" >{{genre.name}}</span></p>
             <p><span>Accroche:</span>{{actor.movies[3].info.tagline}}</p>
-            <p ng-if="actor.movies[3].info.info.original_title != actor.movies[3].info.info.title "> <span>Titre original:</span>{{actor.movies[3].info.original_title }}</p>
+            <p ng-if="actor.movies[3].info.original_title != actor.movies[3].info.title "> <span>Titre original:</span>{{actor.movies[3].info.original_title }}</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-4">
@@ -176,7 +198,7 @@
             <p><span>Sortie le:</span>{{actor.movies[4].info.release_date | date : 'dd MMMM yyyy' }}</p>
             <p ng-if="actor.movies[4].info.genres !== undefined"> <span>Genre:</span><span  class="label label-primary" ng-repeat="genre in actor.movies[4].info.genres" >{{genre.name}}</span></p>
             <p><span>Accroche:</span>{{actor.movies[4].info.tagline}}</p>
-            <p ng-if="actor.movies[4].info.info.original_title != actor.movies[4].info.info.title "> <span>Titre original:</span>{{actor.movies[4].info.original_title }}</p>
+            <p ng-if="actor.movies[4].info.original_title != actor.movies[4].info.title "> <span>Titre original:</span>{{actor.movies[4].info.original_title }}</p>
             <div class="code-icon"></div>
           </div>
           <div class="actor-5">
@@ -185,7 +207,7 @@
             <p><span>Sortie le:</span>{{actor.movies[5].info.release_date | date : 'dd MMMM yyyy' }}</p>
             <p ng-if="actor.movies[5].info.genres !== undefined"> <span>Genre:</span><span  class="label label-primary" ng-repeat="genre in actor.movies[5].info.genres" >{{genre.name}}</span></p>
             <p><span>Accroche:</span>{{actor.movies[5].info.tagline}}</p>
-            <p ng-if="actor.movies[5].info.info.original_title != actor.movies[5].info.info.title "> <span>Titre original:</span>{{actor.movies[5].info.original_title }}</p>
+            <p ng-if="actor.movies[5].info.original_title != actor.movies[5].info.title "> <span>Titre original:</span>{{actor.movies[5].info.original_title }}</p>
             <div class="code-icon"></div>
           </div>
         </div>

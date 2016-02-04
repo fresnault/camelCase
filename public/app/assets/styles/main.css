@@ -201,7 +201,6 @@ font-size: 50px;
 position: relative;
 color: #f6f6f6;
 width: 600px;
-height: 260px;
 }
 
 .code-display::before {
@@ -257,7 +256,8 @@ width: 125px;
 
 p.code-title {
 position: relative;
-font-size: 6rem;
+font-size: 4.5rem;
+margin-bottom: 2rem;
 }
 
 .desc-active::after {
