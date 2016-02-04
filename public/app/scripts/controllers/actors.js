@@ -23,7 +23,10 @@ angular.module('camelCaseApp')
 		})
 
 		$http.get(getMovies).then(function(res) {
-			$scope.actor.movies = res.data.cast.slice(0, 7);
+			
+			var arr = res.data.cast.slice(0, 7);
+			$scope.actor.movies  = shuffle(arr);
+
 			$scope.getMovies();
 		})
 

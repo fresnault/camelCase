@@ -584,7 +584,7 @@ transform: rotate(60deg);
   cursor: pointer;
   height: 80px;
   border-radius: 50%;
-  background: #fff;
+  background: #f6f6f6;
   padding-left: 14px;
 padding-top: 11px;
 }
