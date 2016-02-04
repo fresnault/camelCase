@@ -99,9 +99,9 @@
 			* return : 1 droite, 0 centre, -1 gauche
 			**/
 			function getLrOrientation(tiltLR){
-				if(tiltFB > 20){
+				if(tiltLR > 20){
 					return 1;
-				}else if( titleFB > -20 && titleFB < 20){
+				}else if( tiltLR > -20 && tiltLR < 20){
 					return 0;
 				}else{
 					return -1;
@@ -113,7 +113,7 @@
 			function getFbOrientation(tiltFB){
 				if(tiltFB > 20){
 					return 1;
-				}else if( titleFB > -20 && titleFB < 20){
+				}else if( tiltFB > -20 && tiltFB < 20){
 					return 0;
 				}else{
 					return -1;
