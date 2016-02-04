@@ -42,7 +42,7 @@
 			var ancienneValueLR = 0;
 			var ancienneValueFB = 0;
 			var ancienneDir = 0;
-			
+
 			if (window.DeviceOrientationEvent) {
 			  // Listen for the deviceorientation event and handle the raw data
 			  window.addEventListener('deviceorientation', function(eventData) {
@@ -57,7 +57,7 @@
 			    // alpha is the compass direction the device is facing in degrees
 			    var dir = eventData.alpha;
 			    //if(Math.abs(ancienneValueLR) - Math.abs(tiltLR) > 1  )	{
-				   $('#positionPhone').text('tiltLR : ' + tiltLR  + '; tiltFB :' + tiltFB  + '; dir :' + dir );
+				   $('#positionPhone').text('tiltLR : ' + tiltLR.substring(0,3) + ';<br /> tiltFB :' + tiltFB.substring(0,3)  + ';<br /> dir :' + dir.substring(0,3)  );
 
 			    //}
 			    // call our orientation event handler
