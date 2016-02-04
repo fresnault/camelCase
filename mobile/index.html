@@ -25,7 +25,7 @@
 			
 		</div>
 		<div>
-		<center><p id="positionPhone">Coucou position phone</p></center>
+		<center><p id="positionPhone">Penchez votre device pour intérargir avec l'écran</p></center>
 		</div>
 		<!-- JavaScript at the bottom for fast page loading -->
 		<script src="/socket.io/socket.io.js"></script>
@@ -61,7 +61,7 @@
 			    var dir = eventData.alpha;
 			    //if(Math.abs(ancienneValueLR) - Math.abs(tiltLR) > 1  )	{
 				 //  $('#positionPhone').text('tiltLR : ' + tiltLR.toString().substring(0,3) + ';<br /> tiltFB :' + tiltFB.toString().substring(0,3)  + ';<br /> dir :' + dir.toString().substring(0,3)  );
-				 alert('Hey' + getOrientationString(tiltFB, tiltLR));
+				gererOrientation(tiltFB, tiltLR);
 
 
  				$('#positionPhone').text(getOrientationString(tiltFB, tiltLR) );
@@ -75,18 +75,51 @@
   				window.addEventListener('devicemotion', deviceMotionHandler, false);
 
 			}
-
+			var hexagoneAncien = { ligne : 2, col: 2};
 			function envoyerMessageServeur(ligne, col){
+				if(hexagoneAncien.ligne != ligne || hexagoneAncien.col != col  ){
+					hexagoneAncien.ligne = ligne;
+					hexagoneAncien.col = col;
 					var data = {};
 					data.ligne = ligne;
 					dat.col = col;
 				  	io.emit('mouvement', data);
-
+				}
 			}
-			function getOrientationString(tiltFB, tiltLR){
+			
+			function gererOrientation(tiltFB, tiltLR){
 				var lr = getLrOrientation(tiltLR);
 				var fb = getFbOrientation(tiltFB);
 
+				// Centre 
+				if(lr == 0 && fb == 0 ){
+					envoyerMessageServeur(0,0);
+				}else if(lr == 0 && fb == 1 ){
+					return "haut";
+				}else if(lr == 0 && fb == -1 ){
+					return "bas";
+				}else if(lr == -1 && fb == 0 ){
+					envoyerMessageServeur(2,1);
+				}else if(lr == 1 && fb == 0 ){
+					envoyerMessageServeur(2,3);
+				}else if(lr == 1 && fb == 1 ){
+					envoyerMessageServeur(1,2);
+				}else if(lr == -1 && fb == 1 ){
+					envoyerMessageServeur(1,1);
+				}else if(lr == -1 && fb == -1 ){
+					envoyerMessageServeur(3,1);
+				}else if(lr == 1 && fb == -1 ){
+					envoyerMessageServeur(3,2);
+				}
+
+
+
+			}
+
+
+			function getOrientationString(tiltFB, tiltLR){
+				var lr = getLrOrientation(tiltLR);
+				var fb = getFbOrientation(tiltFB);
 				// Centre 
 				if(lr == 0 && fb == 0 ){
 					return "centre";
@@ -107,9 +140,6 @@
 				}else if(lr == 1 && fb == -1 ){
 					return "basdroite";
 				}
-
-
-
 			}
 			/**
 			* return : 1 droite, 0 centre, -1 gauche
