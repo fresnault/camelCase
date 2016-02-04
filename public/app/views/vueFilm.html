@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="grid-3">
-          <div class="hex-wrap" id="hex31" data-title="{{movie.acteurs[4].character}}" data-content="actor-4" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[4].id)">
+          <div class="hex-wrap" id="hex31" data-title="{{movie.acteurs[4].character}}" data-content="actor-4" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[4])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -109,7 +109,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-wrap" id="hex32" data-title="{{movie.acteurs[5].character}}" data-content="actor-5" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[5].id)">
+          <div class="hex-wrap" id="hex32" data-title="{{movie.acteurs[5].character}}" data-content="actor-5" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[5])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>
@@ -146,7 +146,7 @@
             <div class="code-icon"></div>
           </div>
 
-          
+
           <div class="film">
             <p class="code-title"></p>
             <p ng-if="movie.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
