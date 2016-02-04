@@ -48,6 +48,10 @@ angular.module('camelCaseApp')
 				$location.url('actor/'+selected.id);
 		}
 
+		$scope.moveToHomePage = function() {
+			$location.url('/');
+		}
+
 		$scope.getActors = function() {
 			$scope.movie.acteurs.forEach(function(key, value) {
 				var getDetailedActor = 'http://api.themoviedb.org/3/person/' + key.id + '?api_key=' + API_KEY;

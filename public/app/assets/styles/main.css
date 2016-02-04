@@ -575,3 +575,16 @@ margin: auto;
 content: "";
 transform: rotate(60deg);
 }
+
+.backBtn {
+  position: absolute;
+  top: -40px;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+  width: 80px;
+  cursor: pointer;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff;
+  padding-left: 14px;
+padding-top: 11px;
+}

@@ -27,6 +27,9 @@ angular.module('camelCaseApp')
 			$scope.getMovies();
 		})
 
+		$scope.moveToHomePage = function() {
+			$location.url('/');
+		}
 
 		$scope.selectedMovie = function(selected) {
 			console.log(selected);
