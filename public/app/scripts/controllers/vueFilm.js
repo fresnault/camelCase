@@ -44,8 +44,8 @@ angular.module('camelCaseApp')
 
 
 		$scope.selectedActor = function(selected) {
-			console.log(selected);
-			$location.url('actor/'+selected.id);
+			if(selected  && selected.id)
+				$location.url('actor/'+selected.id);
 		}
 
 		$scope.getActors = function() {

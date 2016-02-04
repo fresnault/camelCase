@@ -29,8 +29,9 @@ angular.module('camelCaseApp')
 
 
 		$scope.selectedMovie = function(selected) {
-			console.log(selected);
-			$location.url('vueFilm/'+selected.id);
+			
+			if(selected  && selected.id)
+				$location.url('vueFilm/'+selected.id);
 		}
 
 		$scope.getMovies = function() {
