@@ -18,7 +18,7 @@
 		<!--[if lt IE 9]><script src="libs/html5shiv.min.js"></script>
 		<![endif]-->
 	</head>
-	<body>
+	<body onload="test()">
 		<div class="container" style="text-align:center;margin-top:5em;perspective: 300;">
 			<img src="app/images/arrow.png" id="imgLogo" class="logo">
 		</div>
@@ -27,6 +27,12 @@
 		<script>window.jQuery || document.write('<script src="libs/jquery-1.10.1.min.js"><\/script>')</script>
 		<script>
 			
+			function test(){
+				//window.location.href = "sms:+375292771265?body=Hello from Appery.io!";
+
+			}
+
+
 			if (window.DeviceOrientationEvent) {
 			  // Listen for the deviceorientation event and handle the raw data
 			  window.addEventListener('deviceorientation', function(eventData) {
