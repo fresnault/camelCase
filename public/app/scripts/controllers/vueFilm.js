@@ -34,6 +34,7 @@ angular.module('camelCaseApp')
 
 		$http.get(getMovie).then(function(res) {
 			$scope.movie = res.data;
+			console.log($scope.movie);
 		})
 
 		$http.get(getActors).then(function(res) {

@@ -145,11 +145,15 @@
             <p><span>Biographie:</span>{{movie.acteurs[1].info.biography| limitTo:100}}...</p>
             <div class="code-icon"></div>
           </div>
+
+          
           <div class="film">
             <p class="code-title"></p>
-            <p>{{movie.tagline}}</p>
-            <p>{{movie.vote_average}} <i class="fa fa-star" style="color:gold"></i></p>
-            <p>{{movie.original_title | limitTo:100}}</p>
+            <p ng-if="movie.adult" ><i class="fa fa-exclamation-triangle" style="color:red"> Film pour adulte</i> </p>
+            <p><span>Sortie le:</span>{{movie.release_date}}</p>
+            <p ng-if="movie.genres !== undefined"> <span>Genre:</span><div  class="label-primary" ng-repeat="genre in movie.genres" >{{genre.name}}</div></p>
+            <p><span>Accroche:</span>{{movie.tagline}}</p>
+            <p ng-if="movie.original_title != movie.title "> <span>Titre original:</span>{{movie.original_title }}</p>
             <div class="code-icon"></div>
           </div>
 
