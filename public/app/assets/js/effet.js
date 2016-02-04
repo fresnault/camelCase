@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+
+/*Appeler la fonction afficherEffet() 
+ Le faire avec après un laps de temps supérieur 		
+ $(".hoverblock").velocity("fadeOut", { delay: 500, duration: 0 });
+ */
+
 	function hex_initial_animation() {
 		$(".hex-wrap,.hover-notify").velocity("transition.expandIn", { stagger: 150 });
 		$(".hex-wrap").velocity("callout.pulse");

@@ -39,13 +39,6 @@ angular
         controller: 'vueFilmCtrl',
         controllerAs: 'vueFilm'
       })
-
-
-      .when('/about', {
-        templateUrl: 'app/views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
       .otherwise({
         redirectTo: '/'
       });
