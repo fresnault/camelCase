@@ -1,6 +1,11 @@
 <script src='app/assets/js/effet.js'></script>
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 
+<section class="text">
+  <h1 class="supertitle"><span class="fontawesome-star star"></span> <span>Camel Movies</span> <span class="fontawesome-star star"></span></h1>
+  <h3 class="supertitle">What else ?</h3>
+</section>
+
 <section class="intro" >
   <div class="intro-block" style="align-items: baseline;">
     <div class="full">
@@ -9,7 +14,7 @@
           <a ng-click="moveToMovie(movie.id)">
             <div class="content">
               <img ng-src="{{movie.poster_path}}">
-              <h1>{{movie.original_title | uppercase}}</h1>
+              <h1 class="full-title">{{movie.original_title | uppercase}}</h1>
             </div>
           </a>
         </li>
@@ -17,7 +22,8 @@
     </div>
 
     <div class="search-wrapper cf">
-
+      <br>
+      <br>
 
       <form>
         <div id="movies" class="search-box active">

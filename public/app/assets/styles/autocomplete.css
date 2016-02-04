@@ -128,7 +128,7 @@
 
 .angucomplete-image-default {
     /* Add your own default image here*/
-    background-image: url('assets/styles/default.jpg');
+    background-image: url('app/images/default.jpg');
     background-position: center;
     background-size: contain;
     padding-left: 92px;
@@ -211,6 +211,11 @@
   width: 100%;
   position: absolute;
   margin: 0px auto;
+  bottom: 100px;
+}
+
+.full-title{
+  margin-left: 50px;
 }
 
 #elements {
@@ -251,7 +256,7 @@
   border-radius: 3px;
   overflow: hidden;
   font-size: 9px;
-  margin: -25% 0px 0px -17%;
+  margin: -25% 0px 0px -10%;
   color: #FFFFFF;
   position: absolute;
   z-index: 1;

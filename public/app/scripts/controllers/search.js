@@ -36,7 +36,6 @@ angular.module('camelCaseApp')
 		angular.forEach(res.data.results, function(movie, key) {
 			movie.poster_path = 'https://image.tmdb.org/t/p/w92' + movie.poster_path;
 		})
-		console.log(res.data);
 		$scope.popular = res.data.results.slice(0, 11);
 
 	});
@@ -44,32 +43,40 @@ angular.module('camelCaseApp')
 
 
 	$scope.changeMoviesResult = function(data) {
-		angular.forEach(data.results, function(movie, value) {
-			if(movie.poster_path != null) {
-				movie.poster_path = 'https://image.tmdb.org/t/p/w92/' + movie.poster_path;
-			} else {
-				movie.poster_path = 'app/images/default.jpg';
-			}
-			movie.vote = '(' + movie.vote_average + '/10)';
-			movie.year = movie.release_date.substring(0, 4);
 
-			if(movie.vote_average < 1) {
-				var index = data.results.indexOf(movie);
-				data.results.splice(index, 1);
+		var result = data;
+
+		var good = [];
+
+		data.results.map(function(movie) {
+
+			if(movie.vote_average >= 1) {
+
+				if( ! movie.poster_path ){
+					movie.poster_path = 'app/images/default.jpg';
+				}else{
+					movie.poster_path = 'https://image.tmdb.org/t/p/w92/' + movie.poster_path;
+				}
+
+				movie.vote = '(' + movie.vote_average + '/10)';
+				movie.year = movie.release_date.substring(0, 4);
+
+				good.push(movie);
 			}
+
 		})
 
+		data.results = good;
+		
 		data.results = $filter('orderBy')(data.results, 'year');
 
 		return data;
 	}
 
 	$scope.changeActorsResult = function(data) {
-		console.log(data);
 		angular.forEach(data.results, function(actor, value) {
-			console.log(actor.profile_path);
 			if(actor.profile_path != null) {
-				actor.profile_path = 'https://image.tmdb.org/t/p/w92/' + actor.profile_path;
+				actor.profile_path = 'https://image.tmdb.org/t/p/w92' + actor.profile_path;
 			} else {
 				actor.profile_path = 'app/images/default.jpg';
 			}
@@ -87,7 +94,6 @@ angular.module('camelCaseApp')
 	}
 
 	$scope.selectedActor = function(selected) {
-		console.log(selected.originalObject);
 		$location.url('actor/'+selected.originalObject.id);
 	}
 
@@ -97,9 +103,6 @@ angular.module('camelCaseApp')
 
 		$http.get(url ).then(function(res) {
 			var movie = res.data;
-
-			console.log(movie);
-
 		})
 	}
 
