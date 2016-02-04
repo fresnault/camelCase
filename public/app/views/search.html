@@ -8,7 +8,7 @@
         <li ng-repeat="movie in popular">
           <a ng-click="moveToMovie(movie.id)">
             <div class="content">
-              <img src="{{movie.poster_path}}">
+              <img ng-src="{{movie.poster_path}}">
               <h1>{{movie.original_title}}</h1>
             </div>
           </a>

@@ -37,7 +37,7 @@ angular.module('camelCaseApp')
 			movie.poster_path = 'https://image.tmdb.org/t/p/w92' + movie.poster_path;
 		})
 		console.log(res.data);
-		$scope.popular = res.data.results.slice(0, 12);
+		$scope.popular = res.data.results.slice(0, 11);
 
 	});
 
@@ -48,7 +48,7 @@ angular.module('camelCaseApp')
 			if(movie.poster_path != null) {
 				movie.poster_path = 'https://image.tmdb.org/t/p/w92/' + movie.poster_path;
 			} else {
-				movie.poster_path = '';
+				movie.poster_path = 'app/images/default.jpg';
 			}
 			movie.vote = '(' + movie.vote_average + '/10)';
 			movie.year = movie.release_date.substring(0, 4);
@@ -65,10 +65,14 @@ angular.module('camelCaseApp')
 	}
 
 	$scope.changeActorsResult = function(data) {
+		console.log(data);
 		angular.forEach(data.results, function(actor, value) {
 			console.log(actor.profile_path);
-			actor.profile_path = 'https://image.tmdb.org/t/p/w92/' + actor.profile_path;
-			console.log(actor.profile_path);
+			if(actor.profile_path != null) {
+				actor.profile_path = 'https://image.tmdb.org/t/p/w92/' + actor.profile_path;
+			} else {
+				actor.profile_path = 'app/images/default.jpg';
+			}
 		})
 
 		return data;
