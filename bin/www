@@ -32,7 +32,9 @@ io.on('connection', function (socket) {
   });
 */
 console.log('un nouveau client !!!');
+
   socket.on('mouvement', function(data){
+    socket.broadcast.emit('mouvement', data);
     console.log('ligne : ' + data.ligne);
     console.log('col : ' + data.col);
   });
