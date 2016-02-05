@@ -22,25 +22,40 @@ angular.module('camelCaseApp')
 	    };
 	})
 
-	.controller('movieCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
+	.controller('movieCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location, $rootScope) {
+
+		if($rootScope.historic == null) {
+			$rootScope.historic = new Array();
+		}
 
 		var idMovie = $routeParams.id;
 		$scope.movie = {};
 
 		var getMovie = 'http://api.themoviedb.org/3/movie/' + idMovie + '?api_key=' + API_KEY;
+		var getImages = 'http://api.themoviedb.org/3/movie/' + idMovie + '/images?api_key=' + API_KEY;
 		var getActors = 'http://api.themoviedb.org/3/movie/' + idMovie + '/credits?api_key=' + API_KEY;
 
 
 		$http.get(getMovie).then(function(res) {
 			$scope.movie = res.data;
 
+			//creation de stats
 			var post = {
 				type : 'movies',
 				id : $scope.movie.id,
 				name : $scope.movie.title
 			};
-
+			//envoi au serveur
 			$http.post('/api/stats', post);
+
+			//ajout à l'historique
+			$rootScope.historic.push({
+				'image':'https://image.tmdb.org/t/p/w92' + $scope.movie.poster_path,
+				'url':'movie/' + $scope.movie.id
+			});
+			
+			$scope.historic = $rootScope.historic;
+			//console.log($scope.historic);
 		})
 
 		$http.get(getActors).then(function(res) {
@@ -49,6 +64,20 @@ angular.module('camelCaseApp')
 			$scope.getActors();
 		})
 
+		$http.get(getImages).then(function(res) {
+			//random backdrop
+			var img = null;
+
+			console.log(res.data.backdrops);
+
+			if(res.data && res.data.backdrops.length > 0 ){
+				img = shuffle(res.data.backdrops)[0].file_path;
+			}else{
+				img = $scope.movie.backdrop_path;
+			}
+
+			$scope.backdrop_path = img;
+		})
 
 		$scope.selectedActor = function(selected) {
 			if(selected  && selected.id)
@@ -59,11 +88,16 @@ angular.module('camelCaseApp')
 			$location.url('/');
 		}
 
+		$scope.redirectTo = function(url) {
+			$location.url(url);
+		}
+
 		$scope.getActors = function() {
 			$scope.movie.acteurs.forEach(function(key, value) {
 				var getDetailedActor = 'http://api.themoviedb.org/3/person/' + key.id + '?api_key=' + API_KEY;
 				$http.get(getDetailedActor).then(function(res) {
 					key.info = res.data;
+					//console.log(key.info);
 				})
 			})
 

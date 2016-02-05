@@ -21,7 +21,11 @@ angular.module('camelCaseApp')
         });
 	    };
 	})
-.controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY, $filter) {
+.controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY, $filter, $rootScope) {
+
+	if($rootScope.historic == null) {
+		$rootScope.historic = new Array();
+	}
 
 	$scope.go = function ( path ) {
 	  $location.path( path );
@@ -133,7 +137,7 @@ angular.module('camelCaseApp')
 		})
 
 		data.results = good;
-		
+
 		data.results = $filter('orderBy')(data.results, 'year');
 
 		return data;

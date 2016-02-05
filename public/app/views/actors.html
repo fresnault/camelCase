@@ -208,4 +208,15 @@
       <div class="hoverblock"></div>
       </div> <!-- End Centerfold-Wrap -->
     </div>
+    <div id="film">
+      <ul>
+        <li ng-repeat="movie in historic"><a ng-href="#/{{movie.url}}" style="background: url('{{movie.image}}') no-repeat top center;
+      background-size: auto 76px;" href=""></a></li>
+      </ul>
+    </div>
+    <div id="can">
+      <div id="topcap"></div>
+
+      <div id="bottomcap"></div>
+    </div>
   </section>

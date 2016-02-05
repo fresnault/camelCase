@@ -24,8 +24,11 @@ angular.module('camelCaseApp')
 	    };
 	})
 
-	.controller('actorsCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location) {
+	.controller('actorsCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location, $rootScope) {
 
+		if($rootScope.historic == null) {
+			$rootScope.historic = new Array();
+		}
 
 		var idPerson = $routeParams.id;
 		$scope.actor = {};
@@ -37,27 +40,43 @@ angular.module('camelCaseApp')
 		$http.get(getActor).then(function(res) {
 			$scope.actor = res.data;
 
+			//creation stats
 			var post = {
 				type : 'actors',
 				id : $scope.actor.id,
 				name : $scope.actor.name
 			};
 
+			//envoi au serveur
 			$http.post('/api/stats', post);
+
+
+			//historique
+			$rootScope.historic.push({
+				'image':'https://image.tmdb.org/t/p/w92' + $scope.actor.profile_path,
+				'url':'actor/' + $scope.actor.id
+			});
+			$scope.historic = $rootScope.historic;
 		})
 
 
 		$http.get(getImages).then(function(res) {
-			
-			var img = shuffle(res.data.results)[0];
 
-			$scope.backdrop_path = img.file_path;
+			//random backdrop
+			var img = null;
+			if(res.data.results.length > 0){
+				img = shuffle(res.data.results)[0].file_path;
+			}
 
-			console.log($scope.backdrop_path);
+			$scope.backdrop_path = img;
 		})
 
+		$scope.redirectTo = function(url) {
+			$location.url(url);
+		}
+
 		$http.get(getMovies).then(function(res) {
-			
+
 			var arr = res.data.cast.slice(0, 7);
 			$scope.actor.movies  = shuffle(arr);
 
@@ -69,7 +88,7 @@ angular.module('camelCaseApp')
 		}
 
 		$scope.selectedMovie = function(selected) {
-			console.log(selected);
+			//console.log(selected);
 			if(selected  && selected.id)
 				$location.url('movie/'+selected.id);
 		}
@@ -81,6 +100,7 @@ angular.module('camelCaseApp')
 				var getDetailedMovie = 'http://api.themoviedb.org/3/movie/' + key.id + '?api_key=' + API_KEY;
 				$http.get(getDetailedMovie).then(function(res) {
 					key.info = res.data;
+					//console.log(key.info);
 				})
 			})
 
