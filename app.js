@@ -69,7 +69,7 @@ function saveDB(){
 //autosave toute les 5 minutes
 var autoSave = setInterval(saveDB, 1000 * 60 * 5 );
 
-app.get('/api/stats', (req,res) => {
+app.get('/api/stats', function (req,res) {
 
   var bests = { 
     actors : null,
@@ -110,7 +110,7 @@ app.get('/api/stats', (req,res) => {
   res.json( bests );
 })
 
-app.post('/api/stats', (req,res) => {
+app.post('/api/stats', function (req,res) {
   var stat = req.body;
 
   if (database[stat.type]){
