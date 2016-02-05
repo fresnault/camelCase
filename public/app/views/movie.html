@@ -21,7 +21,7 @@
 
 <section class="intro" >
 
-<div class="backdrop" back-img="{{movie.backdrop_path}}"></div>
+<div class="backdrop" back-img="{{backdrop_path ? backdrop_path : ''}}"></div>
   <div class="intro-block">
     <div class="centerfold-wrap">
       <i ng-click="moveToHomePage()" class="backBtn fa fa-home fa-4x img-circle"></i>
