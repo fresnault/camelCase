@@ -29,7 +29,10 @@ io.on('connection', function (socket) {
     socket.broadcast.emit('mouvement', data);
     console.log('hexa ' + data.ligne +' : ' + data.col);
   });
-
+  socket.on('envoyerVisit', function(){
+    console.log('transition');
+    socket.broadcast.emit('envoyerVisit');
+  });
 });
 
  

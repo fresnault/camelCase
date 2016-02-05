@@ -13,7 +13,23 @@
 		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		<style>
+			.buttonMobile
+			{
+				border: none;
+				border-radius:50px;
+				text-decoration : none;
+				width:140px;
+				height:30px;
+				padding:6px 0 6px 0;
+				box-shadow:3px 3px 12px #999;
+				background:#fff;
+				font:bold 13px Arial;
+				color:#555;
 
+
+			}
+		</style>
 		<!-- CSS -->
 		<!-- HTML5 IE Enabling Script -->
 		<!--[if lt IE 9]><script src="libs/html5shiv.min.js"></script>
@@ -27,6 +43,8 @@
 		<div>
 		<center><p id="positionPhone">Penchez votre device pour intérargir avec l'écran</p></center>
 		</div>
+
+		<div><center><input type="button" class="buttonMobile" name="bouton" value="visiter" onClick="envoyerTransition()" ></center> </div>
 		<!-- JavaScript at the bottom for fast page loading -->
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -89,6 +107,10 @@
 				}
 			}
 			
+			function envoyerTransition(){
+				socket.emit('envoyerVisit');
+			}
+
 			function gererOrientation(tiltFB, tiltLR){
 				var lr = getLrOrientation(tiltLR);
 				var fb = getFbOrientation(tiltFB);
