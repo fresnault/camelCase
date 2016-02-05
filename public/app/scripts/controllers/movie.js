@@ -14,7 +14,7 @@ angular.module('camelCaseApp')
 	        attrs.$observe('backImg', function(value) {
 
 	        	if(value == '') return;
-	        	
+
 	        var base_url = 'https://image.tmdb.org/t/p/w1280'
 
             element.css({
@@ -56,6 +56,7 @@ angular.module('camelCaseApp')
 
 		$http.get(getMovie).then(function(res) {
 			$scope.movie = res.data;
+			$scope.nePasAfficher = false;
 
 			//creation de stats
 			var post = {
@@ -67,6 +68,9 @@ angular.module('camelCaseApp')
 			$http.post('/api/stats', post);
 
 			$http.get(getTrailers).then(function(res) {
+				if(res.data.results[0].site != "Youtube") {
+					$scope.nePasAfficher = true;
+				}
 				$scope.movie.trailers = 'http://www.youtube.com/embed/' + res.data.results[0].key + '?autoplay=1';
 			});
 
