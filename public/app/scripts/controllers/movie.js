@@ -13,11 +13,10 @@ angular.module('camelCaseApp')
 	    return function(scope, element, attrs){
 	        attrs.$observe('backImg', function(value) {
 
-	        var base_url = 'https://image.tmdb.org/t/p/original'
+	        var base_url = 'https://image.tmdb.org/t/p/w1280'
 
             element.css({
                 'background-image': 'url(' + base_url+value +')',
-                'background-size' : 'cover'
             });
         });
 	    };
@@ -34,7 +33,14 @@ angular.module('camelCaseApp')
 
 		$http.get(getMovie).then(function(res) {
 			$scope.movie = res.data;
-			console.log($scope.movie);
+
+			var post = {
+				type : 'movies',
+				id : $scope.movie.id,
+				name : $scope.movie.title
+			};
+
+			$http.post('/api/stats', post);
 		})
 
 		$http.get(getActors).then(function(res) {
@@ -58,8 +64,6 @@ angular.module('camelCaseApp')
 				var getDetailedActor = 'http://api.themoviedb.org/3/person/' + key.id + '?api_key=' + API_KEY;
 				$http.get(getDetailedActor).then(function(res) {
 					key.info = res.data;
-
-					console.log(key.info);
 				})
 			})
 

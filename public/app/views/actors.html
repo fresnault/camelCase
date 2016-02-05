@@ -11,13 +11,6 @@
     width: 100%;
     position: absolute;
     background-image: url(http://edoardoballerini.com/blog/wp-content/uploads/2010/11/stage-w-chair.jpg);
-    background-position: center;
-
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    filter: blur(1px);
   }
 
   .centerfold-wrap{
@@ -31,7 +24,7 @@
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 <section class="intro" >
 
-<div class="backdrop"></div>
+<div class="backdrop" back-img="{{backdrop_path}}"></div>
   <div class="intro-block">
     <div class="centerfold-wrap">
       <i ng-click="moveToHomePage()" class="backBtn fa fa-home fa-4x img-circle"></i>
