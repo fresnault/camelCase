@@ -4,7 +4,12 @@ var socket = io();
 });*/
 
 socket.on('mouvement', function(data){
-	afficherEffet(data.ligne,data.col);
+	afficherEffet(data.ligne,data.col,true);
+});
+
+socket.on('envoyerVisit', function(data){
+
+	naviguerVersSelectMobile();
 	//console.log('ligne : ' + data.ligne);
 	//console.log('col : ' + data.col);
 });

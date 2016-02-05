@@ -8,19 +8,6 @@
 * Controller of the camelCaseApp
 */
 angular.module('camelCaseApp')
-	.directive('backImg', function(){
-	    return function(scope, element, attrs){
-	        attrs.$observe('backImg', function(value) {
-
-	        var base_url = 'https://image.tmdb.org/t/p/original'
-
-            element.css({
-                'background-image': 'url(' + base_url+value +')',
-                'background-size' : 'cover'
-            });
-        });
-	    };
-	})
 .controller('MoviesCtrl', function($scope, $http, $sce, $location, API_KEY, $filter, $rootScope) {
 
 	if($rootScope.historic == null) {
