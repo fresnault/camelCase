@@ -68,10 +68,17 @@ angular.module('camelCaseApp')
 			$http.post('/api/stats', post);
 
 			$http.get(getTrailers).then(function(res) {
-				if(res.data.results[0].site != "Youtube") {
+
+				if(res.data.results && res.data.results.length > 0 ){
+					if(res.data.results[0].site != "YouTube") {
+						$scope.nePasAfficher = true;
+					}else{
+						$scope.movie.trailers = 'http://www.youtube.com/embed/' + res.data.results[0].key + '?autoplay=1';
+						$scope.nePasAfficher = false;
+					}
+				}else{
 					$scope.nePasAfficher = true;
 				}
-				$scope.movie.trailers = 'http://www.youtube.com/embed/' + res.data.results[0].key + '?autoplay=1';
 			});
 
 			//ajout à l'historique
@@ -79,6 +86,12 @@ angular.module('camelCaseApp')
 				'image':'https://image.tmdb.org/t/p/w92' + $scope.movie.poster_path,
 				'url':'movie/' + $scope.movie.id
 			});
+
+			console.log($rootScope.historic);
+			console.log($rootScope.historic.length);
+			if($rootScope.historic.length > 7){
+				$rootScope.historic.shift();
+			}
 
 			$scope.historic = $rootScope.historic;
 			//console.log($scope.historic);

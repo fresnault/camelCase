@@ -35,8 +35,10 @@
 <div class="backdrop" back-img="{{backdrop_path ? backdrop_path : ''}}"></div>
   <div class="intro-block">
     <div class="centerfold-wrap">
+    
       <i ng-click="moveToHomePage()" class="backBtn fa fa-home fa-4x img-circle"></i>
-      <i ng-show="nePasAfficher" ng-click="openModal()" class="backBtn2 fa fa-play fa-4x img-circle"></i>
+      <i ng-hide="nePasAfficher" ng-click="openModal()" class="backBtn2 fa fa-play fa-4x img-circle"></i>
+
       <div class="hex-master-wrap">
         <!--<div class="hover-notify">Hover Me!</div>-->
         <div class="grid-1">

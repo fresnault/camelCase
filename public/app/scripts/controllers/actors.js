@@ -20,7 +20,7 @@ angular.module('camelCaseApp')
 	            element.css({
 	                'background-image': 'url(' + base_url+value +')',
 	                'background-position' : 'top',
-	                'background-size' : 'contains'
+                	'background-size': 'cover'
 	            });
         	}
         });
@@ -59,6 +59,13 @@ angular.module('camelCaseApp')
 				'image':'https://image.tmdb.org/t/p/w92' + $scope.actor.profile_path,
 				'url':'actor/' + $scope.actor.id
 			});
+
+			console.log($rootScope.historic);
+			console.log($rootScope.historic.length);
+			if($rootScope.historic.length > 7){
+				$rootScope.historic.shift();
+			}
+
 			$scope.historic = $rootScope.historic;
 		})
 
