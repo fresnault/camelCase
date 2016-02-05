@@ -145,7 +145,7 @@
 #switch {
   position: absolute;
   font-size: 0;
-  right: 44px;
+  right: 154px;
   background-color: #2a3a47;
   display: inline-block;
   color: #82909b;
@@ -211,7 +211,8 @@
   width: 100%;
   position: absolute;
   margin: 0px auto;
-  bottom: 100px;
+  bottom: 70px;
+  z-index:101;
 }
 
 .full-title{
