@@ -13,13 +13,16 @@ angular.module('camelCaseApp')
 	    return function(scope, element, attrs){
 	        attrs.$observe('backImg', function(value) {
 
-	        var base_url = 'https://image.tmdb.org/t/p/w1280'
+        	if(value != '' && value != null){
+        		console.log('pas null');
+		        var base_url = 'https://image.tmdb.org/t/p/w1280'
 
-            element.css({
-                'background-image': 'url(' + base_url+value +')',
-                'background-position' : 'top',
-                'background-size' : 'contains'
-            });
+	            element.css({
+	                'background-image': 'url(' + base_url+value +')',
+	                'background-position' : 'top',
+	                'background-size' : 'contains'
+	            });
+        	}
         });
 	    };
 	})
@@ -64,10 +67,12 @@ angular.module('camelCaseApp')
 
 			//random backdrop
 			var img = null;
+			
 			if(res.data.results.length > 0){
 				img = shuffle(res.data.results)[0].file_path;
 			}
 
+			console.log('img' + img);
 			$scope.backdrop_path = img;
 		})
 

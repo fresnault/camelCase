@@ -17,12 +17,15 @@
     opacity: 0;
     cursor: auto;
   }
+
   .mobile-hexactive .label{
     z-index: 999
   }
+
   .mobile-hexactive .hex-init, .mobile-hexactive .hex-init:after,.mobile-hexactive .hex-init:before{
-    background-color: rgba(255, 255, 255, 0.19);
+    background-color: rgba(255, 255, 255, 0.2) !important;
   }
+
 </style>
 
 <section class="intro" >
@@ -34,7 +37,7 @@
       <div class="hex-master-wrap">
         <!--<div class="hover-notify">Hover Me!</div>-->
         <div class="grid-1">
-          <div  ng-class="{'invisible': (movie.acteurs[0] == undefined) }" class="mobile-hexactive hex-wrap" id="hex11" data-title="{{movie.acteurs[0].character}}" data-content="actor-0" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[0])">
+          <div  ng-class="{'invisible': (movie.acteurs[0] == undefined) }" class="hex-wrap" id="hex11" data-title="{{movie.acteurs[0].character}}" data-content="actor-0" data-color="#E34C26" ng-click="selectedActor(movie.acteurs[0])">
               <div class="hex-init"></div>
               <div class="hex-borders">
                 <div class="border-1 actorbordure"></div>

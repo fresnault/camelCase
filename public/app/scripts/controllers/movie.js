@@ -13,6 +13,8 @@ angular.module('camelCaseApp')
 	    return function(scope, element, attrs){
 	        attrs.$observe('backImg', function(value) {
 
+	        	if(value == '') return;
+	        	
 	        var base_url = 'https://image.tmdb.org/t/p/w1280'
 
             element.css({

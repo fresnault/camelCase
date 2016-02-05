@@ -9,13 +9,23 @@
 	}
 
 	function afficherEffet(numLigne, numCol, isMobile) {
+			$('#hex' + dernierHexLigne +''+ dernierHexCol).removeClass('mobile-hexactive');
+
 		if(dernierHexLigne != numLigne || dernierHexCol !=  numCol){
 			eteindreEffet(dernierHexLigne, dernierHexCol);
+
 
 			dernierHexLigne = numLigne;
 			dernierHexCol = numCol;
 
-			var hexagone = $('#hex' + numLigne + numCol+' .hex-init');
+			var hexagone = $('#hex' + numLigne +''+ numCol+' .hex-init');
+
+			if(isMobile){
+				$('#hex' + numLigne +''+ numCol).addClass('mobile-hexactive');
+			}else{
+				$('#hex' + numLigne +''+ numCol).removeClass('mobile-hexactive');
+			}
+
 			var title_color = hexagone.parent().attr("data-color");
 			var title_name = hexagone.parent().attr("data-title");
 			var desc_name = hexagone.parent().attr("data-content");
@@ -46,12 +56,6 @@
 			}, {
 				duration: 200
 			});
-
-			if(isMobile){
-				$(this).parent().addClass('mobile-hexactive');
-			}else{
-				$(this).parent().removeClass('mobile-hexactive');
-			}
 		}
 	}
 
@@ -104,6 +108,7 @@
 
 			if(! animationEnabled) return;
 
+
 			myStopFunction();
 
 			var title_color = $(this).parent().attr("data-color");
@@ -129,6 +134,7 @@
 			hex_description();
 
 			$(this).parent().addClass('hexactive');
+			$(this).parent().removeClass('mobile-hexactive');
 			$('.hexactive').velocity({
 				scaleX: "1.1",
 				scaleY: "1.1"

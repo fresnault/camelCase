@@ -5,8 +5,6 @@ var socket = io();
 
 socket.on('mouvement', function(data){
 	afficherEffet(data.ligne,data.col,true);
-	//console.log('ligne : ' + data.ligne);
-	//console.log('col : ' + data.col);
 });
 
 socket.on('envoyerVisit', function(data){
