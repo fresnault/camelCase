@@ -19,6 +19,8 @@ angular.module('camelCaseApp')
 
             element.css({
                 'background-image': 'url(' + base_url+value +')',
+                'background-position' : 'top',
+                'background-size': 'cover',
             });
         });
 	    };
