@@ -1,11 +1,20 @@
 	var dernierHexLigne = -1;
 	var dernierHexCol = -1;
 
-	function afficherEffet(numLigne, numCol) {
+	function naviguerVersSelectMobile(){
+		//dernierHexLigne
+		//dernierHexCol
+
+		$('#hex' + dernierHexLigne + dernierHexCol+' .hex-init').click();
+	}
+
+	function afficherEffet(numLigne, numCol, isMobile) {
 		if(dernierHexLigne != numLigne || dernierHexCol !=  numCol){
 			eteindreEffet(dernierHexLigne, dernierHexCol);
+
 			dernierHexLigne = numLigne;
 			dernierHexCol = numCol;
+
 			var hexagone = $('#hex' + numLigne + numCol+' .hex-init');
 			var title_color = hexagone.parent().attr("data-color");
 			var title_name = hexagone.parent().attr("data-title");
@@ -27,6 +36,7 @@
 					$('.code-title').text(title_name)
 				}, 0);
 			}
+
 			hex_description();
 
 			$(this).parent().addClass('hexactive');
@@ -36,6 +46,12 @@
 			}, {
 				duration: 200
 			});
+
+			if(isMobile){
+				$(this).parent().addClass('mobile-hexactive');
+			}else{
+				$(this).parent().removeClass('mobile-hexactive');
+			}
 		}
 	}
 
@@ -119,6 +135,13 @@
 			}, {
 				duration: 200
 			});
+
+			var id = $(this).parent().attr('id');
+
+			id = id.split('hex');
+
+			dernierHexLigne = id[1][0];
+			dernierHexCol = id[1][1];
 
 		}).mouseleave(function() {
 
