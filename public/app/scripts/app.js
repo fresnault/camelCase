@@ -14,8 +14,15 @@ angular
     'ngResource',
     'ngRoute',
     'ngTouch',
-    'angucomplete-alt'
+    'ngSanitize',
+    'angucomplete-alt',
+    'stBlurredDialog'
   ])
+  .filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}])
   .constant('API_KEY', '16f6aa27277494afd13f5497d6ceba9e')
   .config(function ($routeProvider) {
     $routeProvider

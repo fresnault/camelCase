@@ -22,7 +22,13 @@ angular.module('camelCaseApp')
 	    };
 	})
 
-	.controller('movieCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location, $rootScope) {
+	.controller('DialogCtrl', ['$scope', 'stBlurredDialog', function($scope, stBlurredDialog, $sce, ngSanitize){
+    $scope.dialogData = stBlurredDialog.getDialogData();
+
+  $scope.movie = {src:$scope.dialogData.msg, title:""};
+}])
+
+	.controller('movieCtrl', function($http, $scope, ThingService, API_KEY, $routeParams,$location, $rootScope, stBlurredDialog) {
 
 		if($rootScope.historic == null) {
 			$rootScope.historic = new Array();
@@ -34,6 +40,14 @@ angular.module('camelCaseApp')
 		var getMovie = 'http://api.themoviedb.org/3/movie/' + idMovie + '?api_key=' + API_KEY;
 		var getImages = 'http://api.themoviedb.org/3/movie/' + idMovie + '/images?api_key=' + API_KEY;
 		var getActors = 'http://api.themoviedb.org/3/movie/' + idMovie + '/credits?api_key=' + API_KEY;
+		var getTrailers = 'http://api.themoviedb.org/3/movie/' + idMovie + '/videos?api_key=' + API_KEY;
+
+		$scope.openModal = function(){
+			console.log('open');
+        // Call open() with a template and some data
+        stBlurredDialog.open('app/views/modal.html', {msg: $scope.movie.trailers});
+    }
+
 
 
 		$http.get(getMovie).then(function(res) {
@@ -48,12 +62,16 @@ angular.module('camelCaseApp')
 			//envoi au serveur
 			$http.post('/api/stats', post);
 
+			$http.get(getTrailers).then(function(res) {
+				$scope.movie.trailers = 'http://www.youtube.com/embed/' + res.data.results[0].key + '?autoplay=1';
+			});
+
 			//ajout à l'historique
 			$rootScope.historic.push({
 				'image':'https://image.tmdb.org/t/p/w92' + $scope.movie.poster_path,
 				'url':'movie/' + $scope.movie.id
 			});
-			
+
 			$scope.historic = $rootScope.historic;
 			//console.log($scope.historic);
 		})
