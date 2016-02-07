@@ -14,4 +14,7 @@ npm start
 
 Disponible à l'adresse `localhost:3000/`
 
-Pour + d'infos, voir avec Emmanuel Petit, Samy Abdallah ou François Esnault.
+Pour + d'infos, voir avec 
+: Emmanuel Petit  [https://fr.linkedin.com/in/emmpetit/en](https://fr.linkedin.com/in/emmpetit/en)
+: François Esnault [https://fr.linkedin.com/in/francoisesnault/en](https://fr.linkedin.com/in/francoisesnault/en)
+: Samy Abdallah  [ https://fr.linkedin.com/in/samyabdallah/en]( https://fr.linkedin.com/in/samyabdallah)

@@ -25,6 +25,7 @@ var io = require('socket.io').listen(server);
 
 io.on('connection', function (socket) {
 
+  /*
   socket.on('mouvement', function(data){
     socket.broadcast.emit('mouvement', data);
     console.log('hexa ' + data.ligne +' : ' + data.col);
@@ -33,6 +34,7 @@ io.on('connection', function (socket) {
     console.log('transition');
     socket.broadcast.emit('envoyerVisit');
   });
+  */
 });
 
  

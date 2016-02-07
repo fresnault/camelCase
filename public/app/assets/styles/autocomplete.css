@@ -2,6 +2,7 @@
 .search-wrapper {
   width:100%;
   margin: 263px 50px 50px 50px;
+  height: 40%;
   padding: 0;
   background-size: cover;
 }
@@ -206,12 +207,21 @@
 }
 
 
+.about-us {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  margin: 0px auto;
+  bottom: 0px;
+  z-index:101;
+}
+
 
 .full {
   width: 100%;
   position: absolute;
   margin: 0px auto;
-  bottom: 70px;
+  bottom: 140px;
   z-index:101;
 }
 
