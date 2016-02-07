@@ -43,13 +43,13 @@ angular.module('camelCaseApp')
 				if(res.data && res.data.profiles){
 
 					var image = res.data.profiles[0];
-					
+
 					$scope.topActor = {
 						id : top.actors.id,
 						name : top.actors.name,
 						image : image.file_path,
 						score : top.actors.score
-					} 
+					}
 
 					console.log($scope.topActor);
 				}else{
@@ -64,13 +64,13 @@ angular.module('camelCaseApp')
 				if(res.data && res.data.posters){
 
 					var image = res.data.posters[0];
-					
+
 					$scope.topMovie = {
 						id : top.movies.id,
 						name : top.movies.name,
 						image : image.file_path,
 						score : top.movies.score
-					} 
+					}
 
 					console.log($scope.topMovie);
 				}else{
@@ -115,17 +115,30 @@ angular.module('camelCaseApp')
 					movie.poster_path = 'https://image.tmdb.org/t/p/w92/' + movie.poster_path;
 				}
 
-				movie.vote = '(' + movie.vote_average + '/10)';
-				movie.year = movie.release_date.substring(0, 4);
+				movie.vote = '';
+
+				for (var i = 0; i < parseInt(movie.vote_average); i++) {
+				    movie.vote += '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
+				}
+
+				for(var i = 0; i < 10-parseInt(movie.vote_average); i++) {
+					movie.vote += '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>';
+				}
+
+				movie.year = '<span class="label label-default">' + movie.release_date.substring(0, 4) + '</span><br />';
 
 				good.push(movie);
 			}
 
 		})
 
+
+
 		data.results = good;
 
-		data.results = $filter('orderBy')(data.results, 'year');
+		console.log(data.results);
+
+		data.results = $filter('orderBy')(data.results, 'popularity', true);
 
 		return data;
 	}
