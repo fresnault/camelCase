@@ -1,8 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Enriqueta);
 .search-wrapper {
-  width:100%;
-  margin: 263px 50px 50px 50px;
-  height: 40%;
+  margin: 40px 60px 0 60px;
   padding: 0;
   background-size: cover;
 }
@@ -146,7 +144,7 @@
 #switch {
   position: absolute;
   font-size: 0;
-  right: 154px;
+  right: 70px;
   background-color: #2a3a47;
   display: inline-block;
   color: #82909b;
@@ -206,6 +204,10 @@
   box-sizing: content-box;
 }
 
+.container-fluid {
+    width: 100%;
+}
+
 
 .about-us {
   text-align: center;
@@ -219,9 +221,7 @@
 
 .full {
   width: 100%;
-  position: absolute;
   margin: 0px auto;
-  bottom: 140px;
   z-index:101;
 }
 
@@ -231,7 +231,7 @@
 
 #elements {
   width: 100%;
-  margin: 80px auto;
+  margin: 20px auto;
   max-width: 1220px;
 }
 

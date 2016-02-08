@@ -2,12 +2,11 @@
 
 
 section.text {
-  position: absolute;
   width: 100%;
   min-width: 800px;
   text-align: center;
-  margin-top: 55px;
-  z-index: 100;
+  margin-top: 30px;
+  height: 140px;
 }
 
 h1.supertitle, h3.supertitle {
@@ -39,7 +38,7 @@ h3.supertitle {
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0.1em;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
   position: relative;
 }
 

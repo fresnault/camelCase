@@ -769,21 +769,16 @@ img {
 **********************************************************************************/
 
 .best-of{
-  position: absolute;
   width: 100%;
-  height: 200px;
-  left: 0;
-  bottom: 245px;
   clear: both;
   display: block;
   text-align: center;
-  margin: auto;
+  margin: 20px auto;
 }
 
 .reward{
   text-align:center;
   width: 200px;
-  height: 200px;
   display: inline-block;
   margin: auto;
   margin: 1em;
@@ -811,7 +806,7 @@ img {
 }
 
 .reward-text{
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 form {
@@ -823,4 +818,3 @@ form {
     65% {-webkit-transform:translateY(-56%);}
     to {-webkit-transform: translateY(-50%);    }
 }
-

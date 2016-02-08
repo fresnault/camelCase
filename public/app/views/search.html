@@ -1,42 +1,17 @@
 <script src='app/assets/js/effet.js'></script>
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 
-<section class="text">
-  <h1 class="supertitle"><span class="fontawesome-star star"></span> <span>Camel Movies</span> <span class="fontawesome-star star"></span></h1>
-  <h3 class="supertitle">What else ?</h3>
-</section>
-
 <section class="intro" >
 
   <div class="intro-block" style="align-items: baseline;">
-    <div class="full">
-      <ul id="elements">
-        <li ng-repeat="movie in popular">
-          <a ng-click="moveToMovie(movie.id)">
-            <div class="content">
-              <img ng-src="{{movie.poster_path}}">
-              <h1 class="full-title">{{movie.original_title | uppercase}}</h1>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="about-us">
-      Application crée lors du Hackathon des 5 ans de l'istic par l'équipe camelCase : <br/>
-      <i>
-      <a href="https://fr.linkedin.com/in/emmpetit">Emmanuel Petit</a>,
-      <a href="https://fr.linkedin.com/in/francoisesnault/"> François Esnault</a>,
-      <a href="https://fr.linkedin.com/in/samyabdallah/"> Samy Abdallah</a>
-      </i>
-      <br />
-      Synchronisation avec smartphone et top acteurs/films désactivées .
-    </div>
+    <div class="container-fluid">
+      <section class="text row visible-desktop">
+        <h1 class="supertitle"><span class="fontawesome-star star"></span> <span>Camel Movies</span> <span class="fontawesome-star star"></span></h1>
+        <h3 class="supertitle">What else ?</h3>
+      </section>
 
 
-    <div class="search-wrapper cf">
-
-      <form>
+      <div class="row search-wrapper cf">
         <div id="movies" class="search-box active">
           <angucomplete-alt id="movies"
           placeholder="Quel est le film que vous recherchez ?"
@@ -70,13 +45,65 @@
           remote-url-response-formatter="changeActorsResult"></angucomplete-alt>
           <button class="search-button" type="submit"></button>
         </div>
-        <div id="switch">
+        <div class="hidden-phone" id="switch">
           <div class="diamond"></div>
           <div class="choice on">FILMS</div>
           <div class="choice">ACTEURS</div>
         </div>
-      </form>
+      </div>
+
+      <div class="row visible-desktop">
+        <div class="best-of">
+          <div id="top-actor" class="reward" ng-if="topActor" ng-click="go('/actor/{{topActor.id}}')">
+            <span>Top Acteur/Actrice </span>
+
+            <div class="reward-img" style="background-image:url(https://image.tmdb.org/t/p/w92{{topActor.image}})"></div>
+            <div class="reward-text"><b>{{topActor.name}} </b><br>{{topActor.score}} vues</div>
+          </div>
+
+          <div class="reward" ng-if="topMovie" ng-click="go('/movie/{{topMovie.id}}')">
+            <span>Top film</span>
+            <div class="reward-img" style="background-image:url(https://image.tmdb.org/t/p/w92{{topMovie.image}})"></div>
+            <div class="reward-text"> {{topMovie.name}}<br>{{topMovie.score}} vues</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row hidden-phone">
+        <div class="full">
+          <ul id="elements">
+            <li ng-repeat="movie in popular">
+              <a ng-click="moveToMovie(movie.id)">
+                <div class="content">
+                  <img ng-src="{{movie.poster_path}}">
+                  <h1 class="full-title">{{movie.original_title | uppercase}}</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="about-us">
+          Application crée lors du Hackathon des 5 ans de l'istic par l'équipe camelCase : <br/>
+          <i>
+            <a href="https://fr.linkedin.com/in/emmpetit">Emmanuel Petit</a>,
+            <a href="https://fr.linkedin.com/in/francoisesnault/"> François Esnault</a>,
+            <a href="https://fr.linkedin.com/in/samyabdallah/"> Samy Abdallah</a>
+          </i>
+          <br />
+          Synchronisation avec smartphone et top acteurs/films désactivées .
+        </div>
+      </div>
     </div>
+    <!--
+    <section class="intro" >
+
+    <div class="intro-block" style="align-items: baseline;">
+
+
+
 
   </div>
 
@@ -84,27 +111,11 @@
 
 </section>
 
-
-    <!--
-    <div class="best-of">
-
-
-
-      <div id="top-actor" class="reward" ng-if="topActor" ng-click="go('/actor/{{topActor.id}}')">
-        <span>Top Acteur/Actrice </span>
-
-        <div class="reward-img" style="background-image:url(https://image.tmdb.org/t/p/w92{{topActor.image}})"></div>
-        <div class="reward-text"><b>{{topActor.name}} </b><br>{{topActor.score}} vues</div>
-      </div>
-
-      <div class="reward" ng-if="topMovie" ng-click="go('/movie/{{topMovie.id}}')">
-        <span>Top film</span>
-        <div class="reward-img" style="background-image:url(https://image.tmdb.org/t/p/w92{{topMovie.image}})"></div>
-        <div class="reward-text"> {{topMovie.name}}<br>{{topMovie.score}} vues</div>
-      </div>
-    </div>
-    -->
-
-
+-->
 <!--</section>-->
 
+</div>
+
+
+
+</section>
